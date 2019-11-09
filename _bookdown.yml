@@ -1,0 +1,8 @@
+book_filename: "FerenciTamas_ValszamEsStatAlapvonalai"
+language:
+  ui:
+    chapter_name: !expr function(i) paste( i, ". fejezet")
+  label:
+    fig: "Ábra "
+delete_merged_file: true
+output_dir: "docs"

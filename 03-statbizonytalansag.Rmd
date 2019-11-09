@@ -1,0 +1,11 @@
+# A bizonytalanság jellemzése
+
+Az előző fejezetben alaposan körüljártuk azt a megállapítást, hogy a következtető statisztikában nincs biztos válasz. Elkerülhetetlen módon minden válaszunkat bizonytalanság fogja terhelni. A következtető statisztika egyik legnagyobb ereje, hogy e bizonytalanság mértékét *magát* is képes lesz jellemezni -- ebben a fejezetben ezzel a kérdéssel fogunk foglalkozni.
+
+## Intervallumbecslés
+
+TODO
+
+## Hipotézisvizsgálat
+
+TODO
