@@ -6,6 +6,7 @@ bookdown::gitbook:
         <li><a href="./">Ferenci Tamás: A valószínűségszámítás<br>és a statisztika alapvonalai</a></li>
       after: |
         <li><a href="http://www.medstat.hu/" target="blank">http://www.medstat.hu/</a></li>
+    edit: https://github.com/tamas-ferenci/FerenciTamas_ValszamEsStatAlapvonalai/edit/master/%s
     download: ["pdf", "epub"]
   pandoc_args: --html-q-tags
 bookdown::pdf_book:
