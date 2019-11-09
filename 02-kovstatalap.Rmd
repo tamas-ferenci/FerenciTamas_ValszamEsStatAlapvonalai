@@ -102,7 +102,7 @@ A különbség nem nagy, de ha jobban megnézzük azért érzékelhető: az utó
 Nagyon tanulságos kipróbálni mindenféle prior és minta mellett, hogy hogyan alakul a poszterior, és hogy az hogyan viszonyul a -- prior információval nem törődő -- maximum likelihood becsléshez. A következő grafikonon a két eloszlás mellett látható a maximum likelihood becslés is, vastagabb függőleges vonallal megjelölve (azzal ne törődjünk, hogy az $\alpha$ meg a $\beta$ mit jelent, a lényeg, hogy ezek állításával a prior eloszlás alakját nagyon sokféle kinézetre beállíthatjuk):
 
 ```{r, screenshot.opts = list(delay = 5)}
-knitr::include_app( "https://research.physcon.uni-obuda.hu/BayesBecsles/", height = "400px" )
+knitr::include_app( "https://research.physcon.uni-obuda.hu/BayesBecsles/", height = "800px" )
 ```
 
 Próbálkozzunk mindenféle priorokkal (egyenletes, valahol csúcsosabb) és különböző mintákkal is (nem csak különböző fej-dobás számok, de különböző kísérlethosszak is)!
@@ -164,7 +164,7 @@ A fenti grafikont, amelyen látjuk, hogy az ismeretlen paraméter adott érték�
 Érdemes kicsit kísérletezni, hogy ez hogyan függ a $p$-től és -- különösen -- a mintanagyságtól:
 
 ```{r, screenshot.opts = list(delay = 5)}
-knitr::include_app( "https://research.physcon.uni-obuda.hu/Deduktiv/", height = "400px" )
+knitr::include_app( "https://research.physcon.uni-obuda.hu/Deduktiv/", height = "600px" )
 ```
 
 Némi játszadozás után levonhatjuk a legfontosabb tanulságot: minél nagyobb a mintaméret, annál kisebb a mintavételi ingadozás mértéke! Azaz, annál kisebb lesz a bizonytalansága a mintából becsült értéknek. Ez egy nagyon fontos megállapítás, hiszen
