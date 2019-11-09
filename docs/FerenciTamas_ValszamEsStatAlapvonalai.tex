@@ -118,11 +118,9 @@ Ez a jegyzet egy kísérlet. Kísérlet arra, hogy a valószínűségszámítás
 
 Mi motiválja ezt a kísérletet? A valószínűségszámítás és a statisztika szokásos egyetemi tárgyalása matematikailag formalizált. Hol mélyebb apparátust használ, hol világosabbat, de mindenesetre végig matematizált. Ami, félreértés ne essék, teljesen érthető, hiszen mind a valószínűségszámításnak, mind a statisztikának a korszerű felépítése csakugyan jól formalizált, és ez elengedhetetlenül szükséges is a bonyolultabb koncepciók bevezetésével és tárgyalásához.
 
-A tapasztalatom azonban az, hogy rengeteg olyan hallgató van, orvostanhallgatók, szociológusok, biológusok, akik abba a furcsa helyzetbe kerülnek, hogy egyfelől a matematikai formalizmusra sem szükségük nincsen, sem kézbentartani nem tudják, de másfelől borzasztó fontos lenne, hogy az alapgondolatokat jól megértsék. Úgy érzem, hogy a matematizált tárgyalás az esetükben egy rossz kompromisszumot köt: azért, hogy a bonyolultabb dolgok is elmondhatóak legyenek (mert ahhoz tényleg kell a matematikai formalizmus, nem kérdés!), az egyszerűbbeket is úgy mondja el, hogy nem értik meg azok, akiknek a bonyolultabbakra nincs szükségük. De miért ne mondjuk inkább ez az egyszerűbbeket formalizáltság nélkül? Igen, így a bonyolultabbakat nem lehet elmondani, de ha egyszer ezekre úgysem lesz szükségük (illetve az érdeklődők úgyis el tudják sajátítani)\ldots? Nem lenne jobb kompromisszum feláldozni a bonyolultabb dolgokat cserében azért, hogy az egyszerűek jobban érthetőek legyenek?
+A tapasztalatom azonban az, hogy rengeteg olyan hallgató van, orvostanhallgatók, szociológusok, biológusok, akik abba a furcsa helyzetbe kerülnek, hogy egyfelől a matematikai formalizmusra sem szükségük nincsen, sem kézbentartani nem tudják, de másfelől borzasztó fontos lenne, hogy az alapgondolatokat jól megértsék. Úgy érzem, hogy a matematizált tárgyalás az esetükben egy rossz kompromisszumot köt: azért, hogy a bonyolultabb dolgok is elmondhatóak legyenek (mert ahhoz tényleg kell a matematikai formalizmus, nem kérdés!), az egyszerűbbeket is úgy mondja el, hogy nem értik meg azok, akiknek a bonyolultabbakra nincs szükségük. De miért ne mondjuk inkább ez az egyszerűbbeket formalizáltság nélkül? Igen, így a bonyolultabbakat nem lehet elmondani, de ha egyszer ezekre úgysem lesz szükségük (illetve az érdeklődők úgyis el tudják sajátítani)\ldots? Nem lenne jobb kompromisszum feláldozni a bonyolultabb dolgokat cserében azért, hogy az egyszerűek jobban érthetőek legyenek? Hiszek ugyanis abban, hogy a valószínűségszámítás és a statisztika alapjait -- amik sok szakmában az igazán fontosak! -- igenis el lehet mondani matematikai formalizmus nélkül is érthetően, világosan.
 
-A kísérlet tehát ez: vajon el lehet-e mondani azokat a dolgokat, amik egyszerűbbek (de a gyakorlatban ezek igazán fontosak sok szakmában!), úgy, hogy ahhoz nem használjuk a matematikai formalizmust?
-
-Cserében igyekszem sokkal nagyobb figyelmet szentelni annak, hogy az alapgondolatok jól érthetőek legyenek, több oldalról körüljárni őket, megmutatni az alkalmazásaikat, példát hozni, ahol lehet szimulációkat végezni, sőt, a jegyzet webes változatában interaktív vizualizációkat is mutatni. Remélem, hogy ennek révén az alapgondolatok tényleg jobban érthetővé válnak.
+A cél elérése érdekében igyekszem sokkal nagyobb figyelmet szentelni annak, hogy az alapgondolatok jól követhetőek legyenek, több oldalról körüljárni őket, megmutatni az alkalmazásaikat, példát hozni, ahol lehet szimulációkat végezni, sőt, a jegyzet webes változatában interaktív vizualizációkat is mutatni.
 
 Az olvasó a kísérlet eredményét a jegyzet végére megítélheti. Én mindenesetre -- különösen azért, mert ez egy kísérlet -- minden visszajelzést, véleményt, kritikát a lehető legnagyobb örömmel veszek a \url{tamas.ferenci@medstat.hu} email-címen!
 
@@ -370,7 +368,7 @@ Mellesleg ránézve az ábrára, a maximum nagyon úgy tűnik, hogy \(0,\!7\), a
 
 A becslést most megkaptuk egy konkrét mintára. De mi van akkor, ha más a minta? Ha nem 7-szer dobunk fejet, akkor mi lesz a maximum likelihood becslés? Játszunk el egy kicsit a dologgal (azt is beállíthatjuk, hogy hányszor dobtunk):
 
-\begin{center}\href{https://research.physcon.uni-obuda.hu/Likelihood/}{\includegraphics{FerenciTamas_ValszamEsStatAlapvonalai_files/figure-latex/unnamed-chunk-15-1} }\end{center}
+\begin{center}\href{https://193.224.41.36/shiny/Likelihood/}{\includegraphics{FerenciTamas_ValszamEsStatAlapvonalai_files/figure-latex/unnamed-chunk-15-1} }\end{center}
 
 Eleget próbálkozva valószínűleg mindenkiben kialakul egy benyomás: a maximum likelihood becslés mindig épp a fejek aránya a mintában, tehát a dobálgatásos kísérletsorozatunkban.
 
@@ -417,7 +415,7 @@ A különbség nem nagy, de ha jobban megnézzük azért érzékelhető: az utó
 
 Nagyon tanulságos kipróbálni mindenféle prior és minta mellett, hogy hogyan alakul a poszterior, és hogy az hogyan viszonyul a -- prior információval nem törődő -- maximum likelihood becsléshez. A következő grafikonon a két eloszlás mellett látható a maximum likelihood becslés is, vastagabb függőleges vonallal megjelölve (azzal ne törődjünk, hogy az \(\alpha\) meg a \(\beta\) mit jelent, a lényeg, hogy ezek állításával a prior eloszlás alakját nagyon sokféle kinézetre beállíthatjuk):
 
-\begin{center}\href{https://research.physcon.uni-obuda.hu/BayesBecsles/}{\includegraphics{FerenciTamas_ValszamEsStatAlapvonalai_files/figure-latex/unnamed-chunk-22-1} }\end{center}
+\begin{center}\href{https://193.224.41.36/shiny/BayesBecsles/}{\includegraphics{FerenciTamas_ValszamEsStatAlapvonalai_files/figure-latex/unnamed-chunk-22-1} }\end{center}
 
 Próbálkozzunk mindenféle priorokkal (egyenletes, valahol csúcsosabb) és különböző mintákkal is (nem csak különböző fej-dobás számok, de különböző kísérlethosszak is)!
 
@@ -472,7 +470,7 @@ A fenti grafikont, amelyen látjuk, hogy az ismeretlen paraméter adott érték�
 
 Érdemes kicsit kísérletezni, hogy ez hogyan függ a \(p\)-től és -- különösen -- a mintanagyságtól:
 
-\begin{center}\href{https://research.physcon.uni-obuda.hu/Deduktiv/}{\includegraphics{FerenciTamas_ValszamEsStatAlapvonalai_files/figure-latex/unnamed-chunk-25-1} }\end{center}
+\begin{center}\href{https://193.224.41.36/shiny/Deduktiv/}{\includegraphics{FerenciTamas_ValszamEsStatAlapvonalai_files/figure-latex/unnamed-chunk-25-1} }\end{center}
 
 Némi játszadozás után levonhatjuk a legfontosabb tanulságot: minél nagyobb a mintaméret, annál kisebb a mintavételi ingadozás mértéke! Azaz, annál kisebb lesz a bizonytalansága a mintából becsült értéknek. Ez egy nagyon fontos megállapítás, hiszen
 

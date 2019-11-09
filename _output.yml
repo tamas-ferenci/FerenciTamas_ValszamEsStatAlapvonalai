@@ -1,5 +1,7 @@
 bookdown::gitbook:
   css: style.css
+  includes:
+    after_body: statcounter.html
   config:
     toc:
       before: |
