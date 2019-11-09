@@ -147,7 +147,7 @@ Két dolog van, aminél jobb, ha az ember nem látja hogyan készül: a kolbász
 </div>
 <p><br></p>
 <p>A becslést most megkaptuk egy konkrét mintára. De mi van akkor, ha más a minta? Ha nem 7-szer dobunk fejet, akkor mi lesz a maximum likelihood becslés? Játszunk el egy kicsit a dologgal (azt is beállíthatjuk, hogy hányszor dobtunk):</p>
-<iframe src="https://193.224.41.36/shiny/Likelihood/?showcase=0" width="672" height="600px">
+<iframe src="https://tamas-ferenci.shinyapps.io/likelihood/?showcase=0" width="672" height="600px">
 </iframe>
 <p>Eleget próbálkozva valószínűleg mindenkiben kialakul egy benyomás: a maximum likelihood becslés mindig épp a fejek aránya a mintában, tehát a dobálgatásos kísérletsorozatunkban.</p>
 <p>Mondom a jó hírt: a dolog nem véletlen. Matematikailag bebizonyítható, hogy ez <em>mindig</em> így <em>kell</em> legyen: a maximum likelihood becslés az ismeretlen paraméterre (a fej-dobás valószínűségére) a mintabeli arány lesz. Vegyük észre, hogy ezzel egy jóval erősebb eredményt értünk el, mint az előző pontban, hiszen nem <em>egy konkrét</em> helyzetre adtuk meg a jó becslést, hanem egy <em>általános receptet</em> találtunk, ami <em>minden</em> mintára megadja, hogy annál a mintánál mi lesz a jó becslés! A recept tehát egy általános számítási eljárás: megmondja, hogy mit csináljunk a mintában lévő megfigyelésekkel (jelen esetben: számoljuk meg, hogy hány fej van benne, majd osszuk el a dobások számával), hogy megkapjuk az abból a mintából számolható becslést. Az ilyen <q>általános receptet</q> szép nevén <strong>becslőfüggvénynek</strong> nevezzük. A valószínűség maximum likelihood becslőfüggvénye tehát a mintabeli arány.</p>
@@ -189,7 +189,7 @@ A számláló első tagja nem probléma: ez épp a likelihood! A nevező szinté
 <img src="FerenciTamas_ValszamEsStatAlapvonalai_files/figure-html/unnamed-chunk-21-1.png" width="672" style="display: block; margin: auto;" /></p>
 <p>A különbség nem nagy, de ha jobban megnézzük azért érzékelhető: az utóbbi esetben kicsit balra mászott a poszterior eloszlás. Miért? Azért, mert hiába láttuk azt, hogy a kísérletben meglehetősen cinkeltnek mutatkozott a pénzérme, de mi hajlunk arra egyéb (értsd: kísérletünkön kívüli) okokból, hogy a pénzérme nem annyira cinkelt, ezért bár a próbálkozásunk eléggé meggyőzött az ellenkezőjéről, de nem tökéletesen (nem annyira, mintha nem lett volna ilyen előzetes hiedelmünk). Tehát pontosan azt látjuk, hogy az előzetes ismeret <em>beleépült</em> a becslésbe!</p>
 <p>Nagyon tanulságos kipróbálni mindenféle prior és minta mellett, hogy hogyan alakul a poszterior, és hogy az hogyan viszonyul a – prior információval nem törődő – maximum likelihood becsléshez. A következő grafikonon a két eloszlás mellett látható a maximum likelihood becslés is, vastagabb függőleges vonallal megjelölve (azzal ne törődjünk, hogy az <span class="math inline">\(\alpha\)</span> meg a <span class="math inline">\(\beta\)</span> mit jelent, a lényeg, hogy ezek állításával a prior eloszlás alakját nagyon sokféle kinézetre beállíthatjuk):</p>
-<iframe src="https://193.224.41.36/shiny/BayesBecsles/?showcase=0" width="672" height="800px">
+<iframe src="https://tamas-ferenci.shinyapps.io/bayesbecsles/?showcase=0" width="672" height="800px">
 </iframe>
 <p>Próbálkozzunk mindenféle priorokkal (egyenletes, valahol csúcsosabb) és különböző mintákkal is (nem csak különböző fej-dobás számok, de különböző kísérlethosszak is)!</p>
 <p>Milyen tanulságokat szűrhetünk le ebből? A legfontosabbak:</p>
@@ -226,7 +226,7 @@ Az egyetlen mód, hogy érthetővé tegyük a frekventista eljárásokat az, ha 
 <p>Térjünk most vissza a frekventista következtető statisztika alapkérdéseire. A látott problémát, tehát, hogy hiába volt adott, állandó, rögzített értéke az ismeretlen paraméternek, mi mégis más és más becslést kapunk mintából, ha (képzeletben) újra meg újra mintát veszünk, szokás <strong>mintavételi ingadozásnak</strong> nevezni. A frekventista iskolában ez a kézenfekvő elmagyarázása annak, hogy miért nem lehet soha biztos állítást tenni: hiába is adott értékű <span class="math inline">\(p\)</span>, akkor is kaphatunk más értékeket a mintából. <em>Ugyanaz</em> volt a sokaság, <em>ugyanúgy</em> véletlen mintát vettünk, mégis mást és mást kaptunk.</p>
 <p>A fenti grafikont, amelyen látjuk, hogy az ismeretlen paraméter adott értékénél hogy oszlik el a mintából becsült paraméter (a mintavételi ingadozás miatt) szokás a becslőfüggvény <strong>mintavételi eloszlásának</strong> nevezni.</p>
 <p>Érdemes kicsit kísérletezni, hogy ez hogyan függ a <span class="math inline">\(p\)</span>-től és – különösen – a mintanagyságtól:</p>
-<iframe src="https://193.224.41.36/shiny/Deduktiv/?showcase=0" width="672" height="600px">
+<iframe src="https://tamas-ferenci.shinyapps.io/deduktiv/?showcase=0" width="672" height="600px">
 </iframe>
 <p>Némi játszadozás után levonhatjuk a legfontosabb tanulságot: minél nagyobb a mintaméret, annál kisebb a mintavételi ingadozás mértéke! Azaz, annál kisebb lesz a bizonytalansága a mintából becsült értéknek. Ez egy nagyon fontos megállapítás, hiszen</p>
 <ul>
