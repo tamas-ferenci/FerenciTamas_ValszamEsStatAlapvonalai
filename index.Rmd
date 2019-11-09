@@ -7,6 +7,7 @@ documentclass: book
 link-citations: yes
 description: "Ez a jegyzet a valószínűségszámítás és a statisztika alapjait igyekszik bemutatni, képletek, levezetések, matematikai formalizmusok nélkül. Azok számára, akiknek a matematikai formalizmus nem kell, de az alapgondolatokat szeretnék jól érteni."
 lang: hu
+github-repo: tamas-ferenci/FerenciTamas_ValszamEsStatAlapvonalai
 mainfont: XITS
 mathfont: XITS Math
 ---
