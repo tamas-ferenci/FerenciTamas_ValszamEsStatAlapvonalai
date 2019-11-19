@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>4 . fejezet Egy alapvető kutatásmódszertani kérdés | A valószínűségszámítás és a statisztika alapvonalai</title>
   <meta name="description" content="Ez a jegyzet a valószínűségszámítás és a statisztika alapjait igyekszik bemutatni, képletek, levezetések, matematikai formalizmusok nélkül. Azok számára, akiknek a matematikai formalizmus nem kell, de az alapgondolatokat szeretnék jól érteni." />
-  <meta name="generator" content="bookdown 0.14 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.15 and GitBook 2.6.7" />
 
   <meta property="og:title" content="4 . fejezet Egy alapvető kutatásmódszertani kérdés | A valószínűségszámítás és a statisztika alapvonalai" />
   <meta property="og:type" content="book" />
@@ -21,7 +21,7 @@
   <meta name="twitter:description" content="Ez a jegyzet a valószínűségszámítás és a statisztika alapjait igyekszik bemutatni, képletek, levezetések, matematikai formalizmusok nélkül. Azok számára, akiknek a matematikai formalizmus nem kell, de az alapgondolatokat szeretnék jól érteni." />
   
 
-<meta name="author" content="Ferenci Tamás" />
+<meta name="author" content="Ferenci Tamás," />
 
 
 
@@ -155,9 +155,9 @@ Statisztikával hazudni könnyű, de statisztika nélkül még könnyebb.
 <p>Dehogy! A nagyobb légszennyezettségű területek nagyon gyakran épp a városok peremkerületeit jelentik, az ipari negyedeket, az elavult fűtésű, leszakadt részeket. Itt azonban tendenciájában inkább rossz körülmények között élő, kevésbé tehetős családba született (egyszóval: rosszabb szocioökonómiai helyzetű) gyermekek fognak lakni. Igen ám, de a rosszabb szocioökonomiai helyzet egy sor betegség magasabb kockázatát hordozza –- mi van, ha a mentális betegségek is ezek közé tartoznak? Mert a rosszabb szocioökonómiai szegmensben a várandósok kevésbé férnek hozzá a szülés előtti gondozáshoz, közülük több dohányzik vagy fogyaszt alkoholt a várandósság alatt. A gyermekekre sem csak a rosszabb levegő hat, hanem a rosszabb táplálkozás, hogy kevésbé vesznek részt szűréseken és így tovább, és így tovább.</p>
 <p>Innentől kezdve, ha találunk is különbséget a mentális megbetegedések előfordulásában a két csoport között, <em>nem tudhatjuk</em>, hogy az minek a következménye: az általunk vizsgált levegőminőségbeli eltérésnek, az ezzel – <em>óhatatlanul!</em> – <em>együttjáró</em> egyéb eltéréseknek, vagy esetleg ezek keverékének?! Ezt nem tudhatjuk – hiszen az összehasonlított csoportok nem <em>csak</em> az összehasonlítás szempontjában tértek el.</p>
 <p>A problémát tehát az jelenti, hogy a két változó kapcsolatát <em>megzavarja</em> egy harmadik változó, mely egyszerre hat az expozícióra <em>és</em> a végpontra. Ez a naiv elképzelés:</p>
-<p><img src="FerenciTamas_ValszamEsStatAlapvonalai_files/figure-html/unnamed-chunk-27-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="FerenciTamas_ValszamEsStatAlapvonalai_files/figure-html/unnamed-chunk-27-1.png" width="70%" style="display: block; margin: auto;" /></p>
 <p>És ez a valódi helyzet:</p>
-<p><img src="FerenciTamas_ValszamEsStatAlapvonalai_files/figure-html/unnamed-chunk-28-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="FerenciTamas_ValszamEsStatAlapvonalai_files/figure-html/unnamed-chunk-28-1.png" width="70%" style="display: block; margin: auto;" /></p>
 <p>Ennek következtében elképzelhető, hogy a légszennyezettségnek valójában <em>nincs is a világon semmilyen</em> hatása a mentális betegségekre, amit látunk, az egy <em>látszólagos</em> hatás, annak következtében, hogy a légszennyezett területen felnövő gyermekek körében egész egyszerűen több a rossz szocioökonomiai helyzetű, ami pedig a <em>valódi</em> oka a több mentális betegségnek!</p>
 <p>Ha valaki nem hiszi el, hogy ilyen létezhet, akkor nézze meg képzeletbeli adatgyűjtésünk részletesebb eredményeit, melyet a következő táblázat mutat:</p>
 <table>
@@ -196,7 +196,7 @@ Statisztikával hazudni könnyű, de statisztika nélkül még könnyebb.
 <p>Fontos felhívni rá a figyelmet, hogy a <q>teljesen fals</q> természetesen nem azt jelenti, hogy az eredményünk akkor valójában azt jelenti, hogy nem okoz mentális betegséget a légszennyezettség – természetesen okozhat, csak ez <em>nem következik</em> abból, hogy több a mentálisan beteg a szennyezettebb levegőjű területeken! <em>Önmagában</em> ez az együttjárás <em>nagyon kevéssé bizonyítja</em> az okozati összefüggést. Azt mondhatjuk, hogy nagyobb légszennyezettség <em>együtt jár</em> a több mentális betegséggel, de hogy a nagyobb légszennyezettség <em>okoz-e</em> több mentális betegséget, az egy sokkal-sokkal fogósabb kérdés, aminek kapcsán, mint a fentiek is mutatják, roppant óvatosan kell eljárni.</p>
 <p>Ez az ilyen jellegű adatok értékelésének egyik legnagyobb problémája (mely a laikus sajtóban is lépten-nyomon visszaköszön). A valóságban ráadásul messze nem olyan egyszerű a helyzet, mint a fenti táblázatban, ahol van egy szem confounderünk. A valós helyzetek általában ennél sokkal-sokkal kuszábbak.</p>
 <p>Ennek illusztrálására vegyünk egy másik példát a cikk elejének listájáról: a császármetszéssel születés megnöveli-e az 1-es típusú cukorbetegség kockázatát? A császármetszéssel születők között több az 1-es típusú cukorbeteg, de – most már tudjuk – ez nem sokat jelent, hiszen mi van, ha vannak egyéb eltérések is a csoportok között? Ez csakugyan így van: a következő ábra mutatja, immár egy valós orvosi példán, a legfontosabb confoundereket ebben az esetben. Még itt se mondhatjuk persze, hogy ez az összes, de ez már valóságközelibb.</p>
-<p><img src="FerenciTamas_ValszamEsStatAlapvonalai_files/figure-html/unnamed-chunk-29-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="FerenciTamas_ValszamEsStatAlapvonalai_files/figure-html/unnamed-chunk-29-1.png" width="70%" style="display: block; margin: auto;" /></p>
 <p>Példának okáért, az anyai diabetes és a császármetszés közötti nyílon pozitív jel van, mert a cukorbeteg anyáknak általában nagyobbak a magzataik, és ez a különféle téraránytalanságok miatt gyakrabban vezet császármetszéshez. Másrészt a cukorbetegségnek van egy erős genetikai komponense, így az anyai cukorbetegségből a gyermekéhez is pozitív nyíl vezet. És már ennyi is elég, hogy bajban legyünk: innentől kezdve, még ha azt is találjuk, hogy a császármetszéssel születettek körében több lesz később cukorbeteg (egyébként tényleg ez a helyzet), akkor sem tudhatjuk, hogy mi a valódi ok: csakugyan a császármetszés, vagy egyszerűen csak az, hogy a császármetszéssel születőknek gyakrabban cukorbeteg az édesanyja? És ez még csak az első confounder volt!</p>
 <p>Érdemes megnézni a másodikat, az anyatejes táplálást is. Ez rámutat arra, hogy az expozíció és a confounder között nem érdekes, hogy milyen az okozati kapcsolat iránya (az eddigi példákkal szemben itt most aligha arról van szó, hogy az anyatejes táplálás befolyásolja, hogy korábban császármetszés történt-e…), csak az fontos, hogy kapcsolat van. És csakugyan, a császármetszéssel szülő nők ritkábban táplálják anyatejjel a gyermeküket, ez így van a valóságban, és most az mindegy is, hogy ennek mi az oka. Másrészt az anyatejes táplálás (számos egyéb előnye mellett) csökkenti a cukorbetegség kockázatát is – és akkor e ponton megint meg vagyunk lőve… és még közel nem vagyunk a sor végén.</p>
 </div>
@@ -299,15 +299,13 @@ alt="ingyen webstatisztika"></a></div></noscript>
 gitbook.require(["gitbook"], function(gitbook) {
 gitbook.start({
 "sharing": {
-"github": false,
 "facebook": true,
 "twitter": true,
-"google": false,
 "linkedin": false,
 "weibo": false,
 "instapaper": false,
 "vk": false,
-"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
 },
 "fontsettings": {
 "theme": "white",

@@ -1,4 +1,5 @@
 bookdown::gitbook:
+  pandoc_args: ["--lua-filter", "handoutconverter.lua", "--html-q-tags"]
   css: style.css
   includes:
     after_body: statcounter.html
@@ -10,10 +11,19 @@ bookdown::gitbook:
         <li><a href="http://www.medstat.hu/" target="blank">http://www.medstat.hu/</a></li>
     edit: https://github.com/tamas-ferenci/FerenciTamas_ValszamEsStatAlapvonalai/edit/master/%s
     download: ["pdf", "epub"]
-  pandoc_args: --html-q-tags
 bookdown::pdf_book:
+  pandoc_args: ["--lua-filter", "handoutconverter.lua"]
   includes:
     in_header: preamble.tex
-  latex_engine: xelatex
-  keep_tex: yes
-bookdown::epub_book: default
+  latex_engine: lualatex
+bookdown::epub_book:
+  pandoc_args: ["--lua-filter", "handoutconverter.lua"]
+beamer_presentation:
+  includes:
+    in_header: preamble.tex
+  latex_engine: lualatex
+  theme: "Madrid"
+  colortheme: "orchid"
+  toc: true
+  slide_level: 2
+  template: handout.html

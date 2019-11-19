@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>2 . fejezet A következtető statisztika alapjai | A valószínűségszámítás és a statisztika alapvonalai</title>
   <meta name="description" content="Ez a jegyzet a valószínűségszámítás és a statisztika alapjait igyekszik bemutatni, képletek, levezetések, matematikai formalizmusok nélkül. Azok számára, akiknek a matematikai formalizmus nem kell, de az alapgondolatokat szeretnék jól érteni." />
-  <meta name="generator" content="bookdown 0.14 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.15 and GitBook 2.6.7" />
 
   <meta property="og:title" content="2 . fejezet A következtető statisztika alapjai | A valószínűségszámítás és a statisztika alapvonalai" />
   <meta property="og:type" content="book" />
@@ -21,7 +21,7 @@
   <meta name="twitter:description" content="Ez a jegyzet a valószínűségszámítás és a statisztika alapjait igyekszik bemutatni, képletek, levezetések, matematikai formalizmusok nélkül. Azok számára, akiknek a matematikai formalizmus nem kell, de az alapgondolatokat szeretnék jól érteni." />
   
 
-<meta name="author" content="Ferenci Tamás" />
+<meta name="author" content="Ferenci Tamás," />
 
 
 
@@ -130,7 +130,7 @@
 <li>Más <span class="math inline">\(p\)</span> választásnál azonban más lesz annak a valószínűsége, hogy ha annyi az igazi <span class="math inline">\(p\)</span>, akkor mekkora valószínűséggel jön ki 10-ből 7 fej. Például ugyenilyen módon számolva, <span class="math inline">\(p=0,\!02\)</span>-nél ez <span class="math inline">\(0,\!000000000144567\)</span>, <span class="math inline">\(p=0,\!1\)</span>-nél <span class="math inline">\(0,\!000008748\)</span>, <span class="math inline">\(p=0,\!5\)</span>-nél <span class="math inline">\(0,\!1172\)</span> (egyre nő), <span class="math inline">\(p=0,\!9\)</span>-nél <span class="math inline">\(0,\!05740\)</span>, <span class="math inline">\(p=0,\!99\)</span>-nél <span class="math inline">\(0,\!0001118\)</span> (megint csökken).</li>
 </ul>
 <p>Lendületbe jöttünk! Akkor már na aprózzuk el, hogy néhány <span class="math inline">\(p\)</span>-nél számolgatjuk… számoljuk ki nagyon sűrűn 0-tól 1-ig és ábrázoljuk, hogy mit kapunk! Íme:
-<img src="FerenciTamas_ValszamEsStatAlapvonalai_files/figure-html/unnamed-chunk-13-1.png" width="672" style="display: block; margin: auto;" /></p>
+<img src="FerenciTamas_ValszamEsStatAlapvonalai_files/figure-html/unnamed-chunk-13-1.png" width="70%" style="display: block; margin: auto;" /></p>
 <p>Azt, hogy <em>ha</em> az ismeretlen paraméter valódi értéke egy adott szám lenne, <em>akkor</em> mekkora valószínűséggel kapjuk azt, amit ténylegesen kaptunk is, <strong>likelihoodnak</strong> szokás nevezni. (Most valaki megkérdezhetné, hogy miért nem valószínűségnek hívjuk, hogy egyszer ez egy valószínűség. A kérdés jogos, ebben az esetben nyugodtan hívhatnánk valószínűségnek is, mert a pénzfeldobás kimenete diszkrét. Ha azonban folytonos lenne, akkor is szeretnénk egy ezzel teljesen analóg fogalmat használni, amit azonban semmiképpen nem hívhatnánk valószínűségnek, mert az nem valószínűség, úgyhogy a likelihood szó azért jó<a href="#fn8" class="footnote-ref" id="fnref8"><sup>8</sup></a>, hogy egy kifejezéssel lehessen egységesen mindkét esetre hivatkozni.) A fenti grafikonon tehát a <q>10-ből 7 fej</q> minta likelihoodja látszik különböző <span class="math inline">\(p\)</span>-k mellett.</p>
 <p>Na most akkor rakjuk össze hol tartunk. Egy: elvileg akármi lehet a <span class="math inline">\(p\)</span>, attól még kaphatjuk azt, amit ténylegesen kaptunk is (10-ből 7 fej)… tehát <em>biztosan</em> nem tudjuk megmondani, hogy mi a <span class="math inline">\(p\)</span>, bármit is mondunk, az mindenképp tipp lesz. De kettő: igenis tudunk <em>racionálisan</em> tippelni, mert hát csak ne tippeljük már azt a <span class="math inline">\(0,\!01\)</span>-et, ami mellett borzasztó valószínűtlen, hogy 10-ből 7 jöjjön ki…! Miközben épp most jött ki ez ténylegesen! Sőt, menjünk tovább: tippeljük azt, aminek a fennállása mellett a <em>legvalószínűbb</em>, hogy az jöjjön ki, ami ténylegesen ki is jött! Tehát ami mellett a legnagyobb a likelihoodja a ténylegesen kijött mintának.</p>
 <p>A statisztikusok nem <q>tippelést</q> mondanak, mert az nem sugározza e terület hideg profizmusát, úgyhogy e helyett a – csakugyan – sokkal komolyabban hangzó <strong>becslés</strong> szót használják. Amit a fentiekben láttunk, azt úgy hívják: <strong>maximum likelihood becslés</strong>, és ezek után már túl sok kommentár nemigen kell hozzá, hogy az elnevezés honnan jön: azt fogadjuk el az ismeretlen paraméter becsléseként, amely mellett a ténylegesen kijött minta likelihoodja a maximális.</p>
@@ -147,7 +147,7 @@ Két dolog van, aminél jobb, ha az ember nem látja hogyan készül: a kolbász
 </div>
 <p><br></p>
 <p>A becslést most megkaptuk egy konkrét mintára. De mi van akkor, ha más a minta? Ha nem 7-szer dobunk fejet, akkor mi lesz a maximum likelihood becslés? Játszunk el egy kicsit a dologgal (azt is beállíthatjuk, hogy hányszor dobtunk):</p>
-<iframe src="https://tamas-ferenci.shinyapps.io/likelihood/?showcase=0" width="672" height="600px">
+<iframe src="https://research.physcon.uni-obuda.hu/Likelihood/?showcase=0" width="70%" height="600px">
 </iframe>
 <p>Eleget próbálkozva valószínűleg mindenkiben kialakul egy benyomás: a maximum likelihood becslés mindig épp a fejek aránya a mintában, tehát a dobálgatásos kísérletsorozatunkban.</p>
 <p>Mondom a jó hírt: a dolog nem véletlen. Matematikailag bebizonyítható, hogy ez <em>mindig</em> így <em>kell</em> legyen: a maximum likelihood becslés az ismeretlen paraméterre (a fej-dobás valószínűségére) a mintabeli arány lesz. Vegyük észre, hogy ezzel egy jóval erősebb eredményt értünk el, mint az előző pontban, hiszen nem <em>egy konkrét</em> helyzetre adtuk meg a jó becslést, hanem egy <em>általános receptet</em> találtunk, ami <em>minden</em> mintára megadja, hogy annál a mintánál mi lesz a jó becslés! A recept tehát egy általános számítási eljárás: megmondja, hogy mit csináljunk a mintában lévő megfigyelésekkel (jelen esetben: számoljuk meg, hogy hány fej van benne, majd osszuk el a dobások számával), hogy megkapjuk az abból a mintából számolható becslést. Az ilyen <q>általános receptet</q> szép nevén <strong>becslőfüggvénynek</strong> nevezzük. A valószínűség maximum likelihood becslőfüggvénye tehát a mintabeli arány.</p>
@@ -177,19 +177,19 @@ Azt gondolom, hogy van jogos érv a nem bayes-i eljárások használatának véd
 \]</span>
 A számláló első tagja nem probléma: ez épp a likelihood! A nevező szintén nem probléma, a Bayes-tételnél látott trükkel itt is elintézhetjük, ha egyébként a számlálót ismerjük. De mi a helyzet a <span class="math inline">\(\mathbb{P}\left(\text{ismeretlen paraméter}\right)\)</span>-rel…?</p>
 <p>Próbáljuk megérteni, hogy ez mit jelent. Mi a valószínűsége annak, hogy a paraméter adott értékű, <em>úgy hogy a mintát nem is ismerjük</em>. Mit gondolunk arról, hogy milyen a fej-dobási valószínűség, még mielőtt egyetlen egyszer is feldobtuk volna az érmét? Valaki esetleg azt mondhatja: semmit, hát épp ezért kezdjük dobálni! Ez egy jogos ellenvetés, de egyelőre rakjuk félre, vagy mondjuk azt, hogy a <q>semmit nem gondolunk</q>, az ezt jelenti<a href="#fn9" class="footnote-ref" id="fnref9"><sup>9</sup></a>:
-<img src="FerenciTamas_ValszamEsStatAlapvonalai_files/figure-html/unnamed-chunk-18-1.png" width="672" style="display: block; margin: auto;" /></p>
+<img src="FerenciTamas_ValszamEsStatAlapvonalai_files/figure-html/unnamed-chunk-18-1.png" width="70%" style="display: block; margin: auto;" /></p>
 <p>Tehát: 0-nál kisebb és 1-nél nagyobb nem lehet a fej-dobási valószínűség, azon belül pedig minden érték környékére ugyanakkora valószínűséggel esik<a href="#fn10" class="footnote-ref" id="fnref10"><sup>10</sup></a>.</p>
 <p>Ha azonban jobban megnézzük, akkor most egy nagyon erőteljes eszközt kaptunk a kezükbe. A Bayes-tétel ugyanis lehetővé teszi, hogy <em>felhasználjuk</em> ha <em>van</em> valamilyen előzetes ismeretünk, elképzelésünk a paraméter eloszlásáról! Például az érmét egy megbízható barátunktól kaptuk, és azt gondoljuk, hogy – ha nem is biztosan – de valószínűleg nem cinkelt, legalábbis nem nagyon. Ekkor a következő lehet a feltételezésünk a fej-dobás valószínűségéről, még mielőtt egyetlen egyszer is feldobtuk volna:
-<img src="FerenciTamas_ValszamEsStatAlapvonalai_files/figure-html/unnamed-chunk-19-1.png" width="672" style="display: block; margin: auto;" /></p>
+<img src="FerenciTamas_ValszamEsStatAlapvonalai_files/figure-html/unnamed-chunk-19-1.png" width="70%" style="display: block; margin: auto;" /></p>
 <p>Ezeket az eloszlásokat szokták – a korábban mondottak fényében nagyon is érthető szóval – <strong>prior eloszlásnak</strong> nevezni.</p>
 <p>Mit kapunk a bayes-i megközelítés eredményeként? Korábban azt írtam, hogy <span class="math inline">\(\mathbb{P}\left(\text{ismeretlen paraméter}\mid\text{minta}\right)\)</span>, de ezt némileg idézőjelbe kell tenni: az ismeretlen paraméter egy folytonos dolog (bárhol lehet 0 és 1 között), tehát nem arról lesz szó, hogy mekkora valószínűséggel vesz fel egy értéket, hanem <em>eloszlása lesz</em>. Ami tulajdonképpen teljesen logikus: van egy eloszlása a kísérletezgetésünk előtt (a prior eloszlás), és egy másik a kísérletezés után. Hát persze: a Bayes-tétel, amint láttuk, beépít egy információt, és itt is ez történt: fogja a prior eloszlást, beleépíti az információt, ami kiderült a kísérletezésünkből, tehát a mintából, és kiköp egy <q>frissített</q> eloszlást, ami már a minta információját is tartalmazza. Ezt szokás – szintén logikus szóval – <strong>poszterior eloszlásnak</strong> nevezni.</p>
 <p>Például egyenletes prior esetén a következő lesz a poszterior (továbbra is mondjuk, hogy 7 fejet dobtunk 10 kísérletből):
-<img src="FerenciTamas_ValszamEsStatAlapvonalai_files/figure-html/unnamed-chunk-20-1.png" width="672" style="display: block; margin: auto;" /></p>
+<img src="FerenciTamas_ValszamEsStatAlapvonalai_files/figure-html/unnamed-chunk-20-1.png" width="70%" style="display: block; margin: auto;" /></p>
 <p>Viszont a <q>baráttól kaptunk a pénzérmét</q> prior esetén így fog kinézni a poszterior <em>pontosan ugyanazon minta</em> mellett:
-<img src="FerenciTamas_ValszamEsStatAlapvonalai_files/figure-html/unnamed-chunk-21-1.png" width="672" style="display: block; margin: auto;" /></p>
+<img src="FerenciTamas_ValszamEsStatAlapvonalai_files/figure-html/unnamed-chunk-21-1.png" width="70%" style="display: block; margin: auto;" /></p>
 <p>A különbség nem nagy, de ha jobban megnézzük azért érzékelhető: az utóbbi esetben kicsit balra mászott a poszterior eloszlás. Miért? Azért, mert hiába láttuk azt, hogy a kísérletben meglehetősen cinkeltnek mutatkozott a pénzérme, de mi hajlunk arra egyéb (értsd: kísérletünkön kívüli) okokból, hogy a pénzérme nem annyira cinkelt, ezért bár a próbálkozásunk eléggé meggyőzött az ellenkezőjéről, de nem tökéletesen (nem annyira, mintha nem lett volna ilyen előzetes hiedelmünk). Tehát pontosan azt látjuk, hogy az előzetes ismeret <em>beleépült</em> a becslésbe!</p>
 <p>Nagyon tanulságos kipróbálni mindenféle prior és minta mellett, hogy hogyan alakul a poszterior, és hogy az hogyan viszonyul a – prior információval nem törődő – maximum likelihood becsléshez. A következő grafikonon a két eloszlás mellett látható a maximum likelihood becslés is, vastagabb függőleges vonallal megjelölve (azzal ne törődjünk, hogy az <span class="math inline">\(\alpha\)</span> meg a <span class="math inline">\(\beta\)</span> mit jelent, a lényeg, hogy ezek állításával a prior eloszlás alakját nagyon sokféle kinézetre beállíthatjuk):</p>
-<iframe src="https://tamas-ferenci.shinyapps.io/bayesbecsles/?showcase=0" width="672" height="800px">
+<iframe src="https://research.physcon.uni-obuda.hu/BayesBecsles/?showcase=0" width="70%" height="800px">
 </iframe>
 <p>Próbálkozzunk mindenféle priorokkal (egyenletes, valahol csúcsosabb) és különböző mintákkal is (nem csak különböző fej-dobás számok, de különböző kísérlethosszak is)!</p>
 <p>Milyen tanulságokat szűrhetünk le ebből? A legfontosabbak:</p>
@@ -218,7 +218,7 @@ Az egyetlen mód, hogy érthetővé tegyük a frekventista eljárásokat az, ha 
 <p>Először kezdjük gyorsan egy terminológiai kérdéssel: amit korábban többször is úgy hívtam, hogy <q>maximum likelihood jellegű</q> megközelítés, az hivatalos nevén a <strong>frekventista</strong> megközelítés. Ha valaki arra asszociál, hogy ilyenről már volt szó, a valószínűség interpretációi kapcsán (<a href="a-valószín-ségszámítás-röviden.html#valinterpretacio">1.4</a>. alfejezet), akkor hamar ki fog derülni, hogy ez egyáltalán nem véletlen.</p>
 <p>Ahogy a korábbiakból is kiderült, a frekventista hozzáállás legfontosabb komponense két szóban összefoglalható: <em>fordított logika</em>. Nem azt nézzük, hogy feltéve a mintát mit tudunk mondani valami ismeretlen dologról, hanem azt, hogy feltéve az ismeretlen dolgot, mit tudunk mondani a mintáról. <em>Ez minden frekventista eljárás sajátja!</em></p>
 <p>Hogy ezt mélyebben megértsük, kapirgáljuk meg kicsit jobban a maximum likelihood becslőt a pénzfeldobásos példában. Megbeszéltük, hogy ekkor az ismeretlen <span class="math inline">\(p\)</span> paraméter, az érme ismeretlen fej-dobási valószínűsége a kísérletben kapott fej-dobási aránnyal becsülhető maximum likelihood módon. Azt is megjegyeztük, hogy ez persze csak tipp, hiszen biztosak soha nem lehetünk. Nézzük meg az utóbbit kicsit közelebbről! Mondjuk, hogy ismerjük a <span class="math inline">\(p\)</span>-t (fordított logika!), és nézzük meg, hogy ekkor a mintabeli arány hogyan viselkedik! Például legyen a <span class="math inline">\(p=0,\!6\)</span>, ekkor mekkora valószínűséggel dobunk 10-ből 0 fejet, 10-ből 1-et, 10-ből 2, …, 10-ből 10-et. A számítást már láttuk is a fejezet elején, csak most nem különböző <span class="math inline">\(p\)</span>-kre számítjuk ugyanazt a fej-dobás számot, hanem ugyanarra a <span class="math inline">\(p\)</span>-re különböző fej-dobás számokat. Íme az eredmény:</p>
-<p><img src="FerenciTamas_ValszamEsStatAlapvonalai_files/figure-html/unnamed-chunk-24-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="FerenciTamas_ValszamEsStatAlapvonalai_files/figure-html/unnamed-chunk-24-1.png" width="70%" style="display: block; margin: auto;" /></p>
 <p>Tehát még egyszer, ha <span class="math inline">\(0,\!6\)</span> az ismeretlen paraméter valódi értéke, így fog eloszlani, hogy mi mennyit becsülünk rá a mintából! Látszik, hogy ha pechünk van, akár nagyon eltérhetünk, becsülhetünk akár 20%-ot, vagy 100%-ot is – de ezeknek kicsi a valószínűsége. De ami még fontosabb: meg tudjuk mondani, hogy mennyi!</p>
 <p>De egy pillanatra álljunk is meg itt rögtön. Mi az, hogy mekkora valószínűséggel dobunk 2 vagy 10 (vagy akárhány) fejet? Itt van az asztalon a pénzérme, épp most dobtam vele 7-szer fejet, akkor meg miről beszélek, hogy mekkora valószínűséggel dobok 2-szer fejet?! Hát 0, mert 100% valószínűséggel 7-et dobtam…! Itt jön a frekventista iskola kulcsgondolata: a valószínűségek csak úgy kapnak értelmet, ha <em>képzeletben újra meg újra megismételnénk</em> a kísérletünket! Felvenném a pénzérmét (<em>ugyanazt</em>! tehát <span class="math inline">\(p\)</span> ugyanannyi!) és <em>újra</em> megcsinálnám a 10 dobásos kísérletet. Feljegyzem, hogy hány fej lett, majd megint megismétlem. Majd megint. Majd megint. Majd megint. Aztán amikor nagyon sokszor megtettem, akkor megszámolom hogy hogyan oszlik meg a fej-dobások száma – és így <em>az előbbi ábrát kapom</em>! Persze, hiszen a valószínűség frekventista értelmezése az volt, hogy amihez a relatív gyakoriság tart, itt a relatív gyakoriság az, hogy az esetek mekkora részében kaptam mondjuk 2 fejet, amire az előbb azt mondtam, hogy <q>megszámolom hogy hogyan oszlik meg a fej-dobások száma</q>. De azt, hogy mihez tart a relatív gyakoriság, csak akkor tudom, ha elég sokszor megismételtem az egész 10 dobálásos kísérletemet.</p>
 <p>Tehát miközben egyetlen kísérletem van ténylegesen, ilyen értelemben beszélhetek csak valószínűségről. <em>Képzeletbeli ismételt mintavétel</em> – ez minden frekventista eljárás mentális modellje. Ez az az aspektus (a fordított logika hangsúlyozása mellett), amit gyakran elhanyagolnak, és csakugyan egyszerűbbnek tűnhet elmismásolni, hiszen kissé agyzsibbasztó dologról van szó, de később komoly félreértések táptalaja lehet, ha ezt nem értjük meg jól.</p>
@@ -226,7 +226,7 @@ Az egyetlen mód, hogy érthetővé tegyük a frekventista eljárásokat az, ha 
 <p>Térjünk most vissza a frekventista következtető statisztika alapkérdéseire. A látott problémát, tehát, hogy hiába volt adott, állandó, rögzített értéke az ismeretlen paraméternek, mi mégis más és más becslést kapunk mintából, ha (képzeletben) újra meg újra mintát veszünk, szokás <strong>mintavételi ingadozásnak</strong> nevezni. A frekventista iskolában ez a kézenfekvő elmagyarázása annak, hogy miért nem lehet soha biztos állítást tenni: hiába is adott értékű <span class="math inline">\(p\)</span>, akkor is kaphatunk más értékeket a mintából. <em>Ugyanaz</em> volt a sokaság, <em>ugyanúgy</em> véletlen mintát vettünk, mégis mást és mást kaptunk.</p>
 <p>A fenti grafikont, amelyen látjuk, hogy az ismeretlen paraméter adott értékénél hogy oszlik el a mintából becsült paraméter (a mintavételi ingadozás miatt) szokás a becslőfüggvény <strong>mintavételi eloszlásának</strong> nevezni.</p>
 <p>Érdemes kicsit kísérletezni, hogy ez hogyan függ a <span class="math inline">\(p\)</span>-től és – különösen – a mintanagyságtól:</p>
-<iframe src="https://tamas-ferenci.shinyapps.io/deduktiv/?showcase=0" width="672" height="600px">
+<iframe src="https://research.physcon.uni-obuda.hu/Deduktiv/?showcase=0" width="70%" height="600px">
 </iframe>
 <p>Némi játszadozás után levonhatjuk a legfontosabb tanulságot: minél nagyobb a mintaméret, annál kisebb a mintavételi ingadozás mértéke! Azaz, annál kisebb lesz a bizonytalansága a mintából becsült értéknek. Ez egy nagyon fontos megállapítás, hiszen</p>
 <ul>
@@ -286,15 +286,13 @@ alt="ingyen webstatisztika"></a></div></noscript>
 gitbook.require(["gitbook"], function(gitbook) {
 gitbook.start({
 "sharing": {
-"github": false,
 "facebook": true,
 "twitter": true,
-"google": false,
 "linkedin": false,
 "weibo": false,
 "instapaper": false,
 "vk": false,
-"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
 },
 "fontsettings": {
 "theme": "white",

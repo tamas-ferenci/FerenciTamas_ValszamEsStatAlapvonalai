@@ -3,3 +3,12 @@
 \usepackage{epigraph}
 \renewcommand{\textflush}{flushright}
 \usepackage{tikz}
+\newif\iftargetBeamer
+\iftargetBeamer
+\let\oldframe\frame
+\renewcommand\frame[1][allowframebreaks]{\oldframe[#1]}
+\setbeamertemplate{frametitle continuation}{%
+    \ifnum\insertcontinuationcount>1
+    \insertcontinuationcount.
+    \fi}
+\fi
