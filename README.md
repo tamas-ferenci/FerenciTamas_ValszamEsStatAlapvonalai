@@ -1,4 +1,8 @@
-[Ferenci Tamás: A valószínűségszámítás és a statisztika alapvonalai (jegyzet).](https://tamas-ferenci.github.io/FerenciTamas_ValszamEsStatAlapvonalai/)
+# Ferenci Tamás: A valószínűségszámítás és a statisztika alapvonalai (jegyzet)
+
+Az elektronikus jegyzet elérhetősége: [Ferenci Tamás: A valószínűségszámítás és a statisztika alapvonalai (jegyzet).](https://tamas-ferenci.github.io/FerenciTamas_ValszamEsStatAlapvonalai/).
+
+Közvetlenül is letölthető (PDF formátumban)[https://github.com/tamas-ferenci/FerenciTamas_ValszamEsStatAlapvonalai/blob/master/docs/FerenciTamas_ValszamEsStatAlapvonalai.pdf] valamint (EPUB formátumban)[https://github.com/tamas-ferenci/FerenciTamas_ValszamEsStatAlapvonalai/blob/master/docs/FerenciTamas_ValszamEsStatAlapvonalai.epub].
 
 # Oktatási segédanyagok
 
