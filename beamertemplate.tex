@@ -58,10 +58,10 @@ $if(section-titles)$
   \end{beamercolorbox}
 }
 \setbeamertemplate{section page}{
-  \centering
-  \begin{beamercolorbox}[sep=12pt,center]{part title}
-    \usebeamerfont{section title}\insertsection\par
-  \end{beamercolorbox}
+	\centering
+	\begin{beamercolorbox}[sep=12pt,center]{part title}
+		\usebeamerfont{section title}\insertsection\par
+	\end{beamercolorbox}
 }
 \setbeamertemplate{subsection page}{
   \centering
@@ -72,14 +72,14 @@ $if(section-titles)$
 \AtBeginPart{
   \frame{\partpage}
 }
-
-\AtBeginSection[]
-{
-	\begin{frame}{$toc-title$}
+\AtBeginSection{
+  \ifbibliography
+  \else
+    \begin{frame}{$toc-title$}
 		\tableofcontents[currentsection]
 	\end{frame}
+  \fi
 }
-
 \AtBeginSubsection{
   \frame{\subsectionpage}
 }
@@ -139,7 +139,7 @@ $endif$
 $endif$
 $if(CJKmainfont)$
   \ifxetex
-    \usepackage{xeCJK}
+    \usepackage[space]{xeCJK}
     \setCJKmainfont[$for(CJKoptions)$$CJKoptions$$sep$,$endfor$]{$CJKmainfont$}
   \fi
 $endif$
@@ -272,7 +272,7 @@ $else$
 $endif$
 $endif$
 $if(graphics)$
-\usepackage{graphicx,grffile}
+\usepackage{graphicx}
 \makeatletter
 \def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
 \def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
@@ -361,9 +361,17 @@ $for(bibliography)$
 \addbibresource{$bibliography$}
 $endfor$
 $endif$
+$if(csl-refs)$
+\newlength{\cslhangindent}
+\setlength{\cslhangindent}{1.5em}
+\newenvironment{cslreferences}%
+  {$if(csl-hanging-indent)$\setlength{\parindent}{0pt}%
+  \everypar{\setlength{\hangindent}{\cslhangindent}}\ignorespaces$endif$}%
+  {\par}
+$endif$
 
 $if(title)$
-\title[$short_title$]{$title$$if(thanks)$\thanks{$thanks$}$endif$}
+\title[$if(short-title)$$short-title$$endif$]{$title$$if(thanks)$\thanks{$thanks$}$endif$}
 $endif$
 $if(subtitle)$
 $if(beamer)$

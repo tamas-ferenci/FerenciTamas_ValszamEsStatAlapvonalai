@@ -19,6 +19,7 @@ bookdown::pdf_book:
 bookdown::epub_book:
   pandoc_args: ["--lua-filter", "handoutconverter.lua"]
 beamer_presentation:
+  template: beamertemplate.tex
   includes:
     in_header: preamble.tex
   latex_engine: lualatex
@@ -26,4 +27,3 @@ beamer_presentation:
   colortheme: "orchid"
   toc: true
   slide_level: 2
-  template: handout.html

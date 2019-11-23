@@ -1,0 +1,26 @@
+\makeatletter
+\def\beamer@checkframetitle{%
+\begingroup
+  \edef\temp{%
+    \endgroup
+    \noexpand\frametitle
+    [\unexpanded\expandafter{\beamer@savedshortframetitle}]%
+    {\unexpanded\expandafter{\beamer@savedframetitle}}%
+  }
+\temp
+\@ifnextchar\bgroup\beamer@inlineframetitle{}}
+
+\long\def\beamer@@frametitle[#1]#2{%
+  \beamer@ifempty{#2}{}{%
+    \gdef\insertframetitle{{#2\ifnum\beamer@autobreakcount>0\relax{}\space\usebeamertemplate*{frametitle
+continuation}\beamer@autobreakcount\fi}}%
+  \gdef\beamer@frametitle{#2}%
+  \gdef\beamer@shortframetitle{#1}%
+  \global\let\beamer@savedshortframetitle\beamer@shortframetitle
+    \global\let\beamer@savedframetitle\beamer@frametitle
+}%
+}
+  \global\let\beamer@savedshortframetitle\@empty
+    \global\let\beamer@savedframetitle\@empty
+
+\makeatother

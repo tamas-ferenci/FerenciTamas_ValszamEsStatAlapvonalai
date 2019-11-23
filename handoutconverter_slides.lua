@@ -23,6 +23,9 @@ function Pandoc(doc)
              (el.t == "Header") then
              table.insert(hblocks, el)
           end
+          if (el.t == "Div" and el.classes[1] == "framebreak") then
+              table.insert(hblocks,pandoc.RawBlock("latex","\\end{frame}\\begin{frame}") )
+          end
       end
       return pandoc.Pandoc(hblocks, doc.meta)
     end

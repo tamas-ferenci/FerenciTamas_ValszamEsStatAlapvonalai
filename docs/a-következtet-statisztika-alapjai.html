@@ -6,12 +6,12 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>2 . fejezet A következtető statisztika alapjai | A valószínűségszámítás és a statisztika alapvonalai</title>
   <meta name="description" content="Ez a jegyzet a valószínűségszámítás és a statisztika alapjait igyekszik bemutatni, képletek, levezetések, matematikai formalizmusok nélkül. Azok számára, akiknek a matematikai formalizmus nem kell, de az alapgondolatokat szeretnék jól érteni." />
-  <meta name="generator" content="bookdown 0.15 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.16 and GitBook 2.6.7" />
 
   <meta property="og:title" content="2 . fejezet A következtető statisztika alapjai | A valószínűségszámítás és a statisztika alapvonalai" />
   <meta property="og:type" content="book" />
-  
-  
+  <meta property="og:url" content="https://tamas-ferenci.github.io/FerenciTamas_ValszamEsStatAlapvonalai/" />
+  <meta property="og:image" content="https://tamas-ferenci.github.io/FerenciTamas_ValszamEsStatAlapvonalai/FerenciTamas_ValszamEsStatAlapvonalai_cover.png" />
   <meta property="og:description" content="Ez a jegyzet a valószínűségszámítás és a statisztika alapjait igyekszik bemutatni, képletek, levezetések, matematikai formalizmusok nélkül. Azok számára, akiknek a matematikai formalizmus nem kell, de az alapgondolatokat szeretnék jól érteni." />
   <meta name="github-repo" content="tamas-ferenci/FerenciTamas_ValszamEsStatAlapvonalai" />
 
@@ -19,7 +19,7 @@
   <meta name="twitter:title" content="2 . fejezet A következtető statisztika alapjai | A valószínűségszámítás és a statisztika alapvonalai" />
   
   <meta name="twitter:description" content="Ez a jegyzet a valószínűségszámítás és a statisztika alapjait igyekszik bemutatni, képletek, levezetések, matematikai formalizmusok nélkül. Azok számára, akiknek a matematikai formalizmus nem kell, de az alapgondolatokat szeretnék jól érteni." />
-  
+  <meta name="twitter:image" content="https://tamas-ferenci.github.io/FerenciTamas_ValszamEsStatAlapvonalai/FerenciTamas_ValszamEsStatAlapvonalai_cover.png" />
 
 <meta name="author" content="Ferenci Tamás," />
 
@@ -122,11 +122,11 @@
 <p>A statisztika szó alatt rengeteg dolgot szoktak érteni. Statisztika annak módszertana, hogy hogyan kell az ország inflációját megbecsülni, statisztika, hogy egy piackutatást vagy közvéleménykutatást hogyan kell megtervezni és kiértékelni, statisztika, hogy 10 számból átlagot számolunk, statisztika, hogy 100 számból egy oszlopdiagramot rajzolunk. A statisztika kicsit matematizáltabb területeit két nagy csoportra szokták osztani, leíró (deskriptív) és következtető (induktív) statisztikára. Egyelőre nem mondom meg, hogy ezek a szavak mit jelentenek, mert a szükséges fogalmakat csak később fogom bevezetni, de annyit mindenesetre elárulok, hogy a továbbiakban ez utóbbiról, a következtető statisztikáról lesz szó. (A deskriptív statisztika általában jóval érthetőbb, és sokkal kevesebb kérdést vet fel.)</p>
 <div id="egy-rávezető-gyakorlat" class="section level2">
 <h2><span class="header-section-number">2.1</span> Egy rávezető gyakorlat</h2>
-<p>Barátunktól kapunk egy pénzérmét, mely nem feltétlenül szabályos, azaz nem biztos, hogy a fej dobás valószínűsége épp 0,5, azaz 50%. Lehet bármennyi, jelöljük <span class="math inline">\(p\)</span>-vel, egyedül annyit kössünk ki, hogy azért nem 0 és nem 1. A kérdés: meghatározni <span class="math inline">\(p\)</span>-t, azaz megmondani, hogy mekkora valószínűséggel dobunk fejet. Mit csináljuk?</p>
-<p>A legtöbben valószínűleg mindenféle statisztikai megfontolás nélkül is azt csinálnák, hogy elkezdik feldobálgatni a pénzérmét, és számolják, hogy hányszor jön ki fej. Mondjuk, hogy 10-szer dobjuk fel, és 7-szor kapunk fejet. Úgy fogjuk mondani: ez lett a mintánk (a minta szó használatának oka később még világosabb lesz). A statisztika azon területét, ami egy megfigyelt jelenségből igyekszik következtetni valamilyen, a jelenség hátterében lévő dologra (jelen esetben a 10 dobásban kapott 7 fejből a <span class="math inline">\(p\)</span>-re) szokás <strong>induktív (vagy következtető) statisztikának</strong> mondani.</p>
+<p>Barátunktól kapunk egy pénzérmét, mely nem feltétlenül szabályos, tehát nem biztos, hogy a fej dobás valószínűsége épp 0,5, azaz 50%. Lehet bármennyi, jelöljük <span class="math inline">\(p\)</span>-vel, egyedül annyit kössünk ki, hogy azért nem 0 és nem 1. A feladat: meghatározni <span class="math inline">\(p\)</span>-t, azaz megmondani, hogy mekkora valószínűséggel dobunk fejet. Mit csináljuk?</p>
+<p>A legtöbben valószínűleg mindenféle statisztikai megfontolás nélkül is azt tennék, hogy elkezdik feldobálgatni a pénzérmét, és számolják, hogy hányszor jön ki fej. Mondjuk, hogy 10-szer dobjuk fel, és 7-szor kapunk fejet. Úgy fogjuk mondani: ez lett a mintánk (a minta szó használatának oka később még világosabb lesz). A statisztika azon területét, ami egy megfigyelt jelenségből igyekszik következtetni valamilyen, a jelenség hátterében lévő dologra (jelen esetben a 10 dobásban kapott 7 fejből a <span class="math inline">\(p\)</span>-re) szokás <strong>induktív (vagy következtető) statisztikának</strong> mondani.</p>
 <p>Mit tudunk tehát mondani a 10 dobásból kapott 7 fej láttán?</p>
 <ul>
-<li>Ettől még a <span class="math inline">\(p\)</span> <em>elvileg</em> akármennyi lehet. Furcsa lenne, ha csak mondjuk 1% lenne (és mégis 10-ből 7-szer ez jött ki), de nem lehetetlen! Számoljuk is ki, hogy <span class="math inline">\(p=0,\!01\)</span> mellett mekkora valószínűséggel dobunk 10-ből 7-szer fejet. Ez esetben elsőre 0,01 valószínűséggel dobunk fejet, másodikra szintén, és ha e kettő dobás független egymástól, akkor annak a valószínűsége, hogy elsőre <em>és</em> másodikra is fejet dobunk <span class="math inline">\(0,\!01 \cdot 0,\!01\)</span>. (Emlékezzünk vissza, hogy független események együttes bekövetkezésének a valószínűsége a külön-külön vett bekövetkezési valószínűségeik szorzata!) Hasonlóképp, annak a valószínűsége, ha <span class="math inline">\(p=0,\!01\)</span>, hogy az első három fej lesz, nem más mint <span class="math inline">\(0,\!01^3\)</span>, és annak, hogy az első 7 fej lesz, <span class="math inline">\(0,\!01^7\)</span>. Pontosan 7 fejet akkor kapunk, ha a maradék 3 dobás mind írás (<span class="math inline">\(0,\!99^3\)</span>), így ennek a sorozatnak a valószínűsége <span class="math inline">\(0,\!01^7 \cdot 0,\!99^3\)</span>. Annak a valószínűsége, hogy 10-ből 7-szer jön ki fej azonban ennél jóval nagyobb, hiszen akkor is 7-szer jön ki, ha az első, harmadik, negyedik, …, nyolcadik lesz fej, akkor is, ha az utolsó 7 dobás fej stb. Némi pofozgatás után kiügyeskedhetjük, hogy ennek a valószínűsége: <span class="math inline">\(0,\!000000000001164\)</span>. Hát ez tényleg nem túl nagy… de <em>nem</em> nulla! Elvileg tehát akkor is dobhatunk 10-ből 7 fejet, ha közben 1% a fej-dobás valószínűsége.</li>
+<li>Ettől még a <span class="math inline">\(p\)</span> <em>elvileg</em> akármennyi lehet. Furcsa lenne, ha csak mondjuk 1% lenne (és mégis 10-ből 7-szer ez jött ki), de nem lehetetlen! Számoljuk is ki, hogy <span class="math inline">\(p=0,\!01\)</span> mellett mekkora valószínűséggel dobunk 10-ből 7-szer fejet. Ez esetben elsőre 0,01 valószínűséggel dobunk fejet, másodikra szintén, és ha e kettő dobás független egymástól, akkor annak a valószínűsége, hogy elsőre <em>és</em> másodikra is fejet dobunk <span class="math inline">\(0,\!01 \cdot 0,\!01\)</span>. (Emlékezzünk vissza, hogy független események együttes bekövetkezésének a valószínűsége a külön-külön vett bekövetkezési valószínűségeik szorzata!) Hasonlóképp, annak a valószínűsége, ha <span class="math inline">\(p=0,\!01\)</span>, hogy az első három fej lesz, nem más mint <span class="math inline">\(0,\!01^3\)</span>, és annak, hogy az első 7 fej lesz, <span class="math inline">\(0,\!01^7\)</span>. Pontosan 7 fejet akkor kapunk, ha a maradék 3 dobás mind írás (<span class="math inline">\(0,\!99^3\)</span>), így ennek az egész sorozatnak a valószínűsége <span class="math inline">\(0,\!01^7 \cdot 0,\!99^3\)</span>. Annak a valószínűsége, hogy 10-ből 7-szer jön ki fej azonban ennél jóval nagyobb, hiszen akkor is 7-szer jön ki, ha az első, harmadik, negyedik, …, nyolcadik lesz fej, akkor is, ha az utolsó 7 dobás fej stb. Némi pofozgatás után kiügyeskedhetjük, hogy ennek a valószínűsége: <span class="math inline">\(0,\!000000000001164\)</span>. Hát ez tényleg nem túl nagy… de <em>nem</em> nulla! Elvileg tehát akkor is dobhatunk 10-ből 7 fejet, ha közben 1% a fej-dobás valószínűsége.</li>
 <li>Más <span class="math inline">\(p\)</span> választásnál azonban más lesz annak a valószínűsége, hogy ha annyi az igazi <span class="math inline">\(p\)</span>, akkor mekkora valószínűséggel jön ki 10-ből 7 fej. Például ugyenilyen módon számolva, <span class="math inline">\(p=0,\!02\)</span>-nél ez <span class="math inline">\(0,\!000000000144567\)</span>, <span class="math inline">\(p=0,\!1\)</span>-nél <span class="math inline">\(0,\!000008748\)</span>, <span class="math inline">\(p=0,\!5\)</span>-nél <span class="math inline">\(0,\!1172\)</span> (egyre nő), <span class="math inline">\(p=0,\!9\)</span>-nél <span class="math inline">\(0,\!05740\)</span>, <span class="math inline">\(p=0,\!99\)</span>-nél <span class="math inline">\(0,\!0001118\)</span> (megint csökken).</li>
 </ul>
 <p>Lendületbe jöttünk! Akkor már na aprózzuk el, hogy néhány <span class="math inline">\(p\)</span>-nél számolgatjuk… számoljuk ki nagyon sűrűn 0-tól 1-ig és ábrázoljuk, hogy mit kapunk! Íme:
@@ -286,6 +286,7 @@ alt="ingyen webstatisztika"></a></div></noscript>
 gitbook.require(["gitbook"], function(gitbook) {
 gitbook.start({
 "sharing": {
+"github": false,
 "facebook": true,
 "twitter": true,
 "linkedin": false,
@@ -304,6 +305,10 @@ gitbook.start({
 "text": "Szerkesztés"
 },
 "history": {
+"link": null,
+"text": null
+},
+"view": {
 "link": null,
 "text": null
 },

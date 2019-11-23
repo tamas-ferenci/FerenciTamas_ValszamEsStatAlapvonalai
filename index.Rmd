@@ -1,6 +1,6 @@
 --- 
 title: "A valószínűségszámítás és a statisztika alapvonalai"
-short_title: "Valószínűségszámítás és statisztika"
+short-title: "Valószínűségszámítás és statisztika"
 toc-title: "Tartalom"
 author: "Ferenci Tamás, \\href{mailto:tamas.ferenci@medstat.hu}{tamas.ferenci@medstat.hu}"
 date: '`r format(Sys.time(), "%Y\\. %B %e\\.")`'
@@ -12,6 +12,8 @@ lang: hu
 github-repo: tamas-ferenci/FerenciTamas_ValszamEsStatAlapvonalai
 mainfont: XITS
 mathfont: XITS Math
+url: https://tamas-ferenci.github.io/FerenciTamas_ValszamEsStatAlapvonalai/
+cover-image: FerenciTamas_ValszamEsStatAlapvonalai_cover.png
 ---
 
 # Előszó {-}
@@ -23,6 +25,8 @@ distr01panel <- function( ... ) {
   lattice::panel.grid( h = -1, v = 0 )
   lattice::panel.xyplot( ... )
 }
+download.file( "https://raw.githubusercontent.com/tamas-ferenci/FerenciTamas_ValszamEsStatAlapvonalai/master/FerenciTamas_ValszamEsStatAlapvonalai_cover.png",
+               "./docs/FerenciTamas_ValszamEsStatAlapvonalai_cover.png", mode = "wb" )
 ```
 
 <!--
