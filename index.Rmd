@@ -68,3 +68,5 @@ A cél elérése érdekében igyekszem sokkal nagyobb figyelmet szentelni annak,
 </div>
 
 Az olvasó a kísérlet eredményét a jegyzet végére megítélheti. Én mindenesetre -- különösen azért, mert ez egy kísérlet -- minden visszajelzést, véleményt, kritikát a lehető legnagyobb örömmel veszek a [tamas.ferenci@medstat.hu](tamas.ferenci@medstat.hu) email-címen!
+
+A jegyzet weboldala (oktatási segédanyagokkal, technikai információkkal) a [https://github.com/tamas-ferenci/FerenciTamas_ValszamEsStatAlapvonalai](https://github.com/tamas-ferenci/FerenciTamas_ValszamEsStatAlapvonalai) címen érhető el.

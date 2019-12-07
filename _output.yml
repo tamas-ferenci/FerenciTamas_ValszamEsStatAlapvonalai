@@ -2,6 +2,7 @@ bookdown::gitbook:
   pandoc_args: ["--lua-filter", "handoutconverter.lua", "--html-q-tags"]
   css: style.css
   includes:
+    in_header: GATamasFerenciGithubIo.html
     after_body: statcounter.html
   config:
     toc:
