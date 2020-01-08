@@ -8,15 +8,15 @@ cat("<div style='text-align: right;border-bottom: 1px solid black; width: 40%;ma
 
 <!-- Az Epub-ban ez nem jelenik meg, sőt, sorkizártra állítva sincsen -->
 
-<div class="handout">
-- A valószínűségszámítás bizonyos értelemben a statisztika "alaptudománya"
-</div>
+```{block, type="handout"}
+A valószínűségszámítás bizonyos értelemben a statisztika ,,alaptudománya''
+```
 
 A statisztikusok számára a valószínűség-számítás vagy -- rosszabb esetben -- gonosz nagytestvér, akire titokban irigykedik mindenki, mert az "igazi" matematika, cserében a felét nem érti az ember, vagy -- jobb esetben -- az a segédtudomány, de jobb lenne azt mondani: alaptudomány, amihez egy halom esetben vissza lehet nyúlni a statisztikai problémák kezelése során. A valószínűségszámítás megértése tehát megkerülhetetlen (pontosabban szólva: nem érdemes megkerülni!) ahhoz, hogy az ember jól megértse a statiszikát. Nem kell valószínűségszámítási szaktudósnak lenni, ellenkezőleg, pár alapfogalom lesz csak igazán fontos -- de azokat tényleg jól kell érteni.
 
-<div class="handout">
-- Éppen ezért a statisztika megértéséhez is fontos érteni az alapjait (és önmagában is érdekes!)
-</div>
+```{block, type="handout"}
+Éppen ezért a statisztika megértéséhez is fontos érteni az alapjait (és önmagában is érdekes!)
+```
 
 Ez a fejezet ezt a célt szolgálja. Összhangban az Előszóval mondottakal, kerülni fogok minden matematikai formalizmust, képletet, levezetést, szépen kimondott tételt, ami tudom, hogy elkerülhetetlenül trehányságokhoz fog vezetni, ezért előre valszámos barátaink elnézését kérem, de cserében igyekszem hangsúlyozni azokat a koncepciókat, amiket fontos átlátni a későbbiekhez. (A statisztika és a valószínűségszámítás viszonyára pedig még visszatérek később, amikor mindkettő megfelelő fogalmai és problémái ismertek lesznek.)
 
@@ -28,21 +28,21 @@ Ez a fejezet ezt a célt szolgálja. Összhangban az Előszóval mondottakal, ke
 cat("<div style='text-align: right;border-bottom: 1px solid black; width: 40%;margin-left:auto; margin-right:0'>Mert töredékes az ismeretünk, és töredékes a prófétálásunk.</div><div style='text-align: right; width:40%;margin-left:auto;margin-right:0'><i>Szent Pál</i></div><br>")
 ```
 
-<div class="handout">
-- A valószínűségszámítás alapfogalma a **véletlen kísérlet**: adott körülmények között akárhányszor megfigyelhető, de a kimenete nem mondható meg biztosan (csak az, hogy egyáltalán milyen kimenetek lehetségesek)
-</div>
+```{block, type="handout"}
+A valószínűségszámítás alapfogalma a **véletlen kísérlet**: adott körülmények között akárhányszor megfigyelhető, de a kimenete nem mondható meg biztosan (csak az, hogy egyáltalán milyen kimenetek lehetségesek)
+```
 
 Szokták mondani, hogy a valószínűségszámítás alapfogalma a **véletlen kísérlet** és hogy ennek definíciója: valami, ami adott körülmények között akárhányszor végrehajtható vagy megfigyelhető, de a kimenete nem mondható meg biztosan (csak az ismert, hogy milyen kimenetei lehetségesek egyáltalán), például mert az ismereteink hiányosak, hogy pontosan meg tudjuk előre mondani a kimenetet.
 
-<div class="handout">
-- Valójában nagyon sokszor nem a szó szokásos értelemben vett "kísérletről" van szó és az sem nyilvánvaló, hogy milyen értelemben figyelhető meg akárhányszor (pl. a beteg meggyógyul-e)
-</div>
+```{block, type="handout"}
+Valójában nagyon sokszor nem a szó szokásos értelemben vett ,,kísérletről'' van szó és az sem nyilvánvaló, hogy milyen értelemben figyelhető meg akárhányszor (pl. a beteg meggyógyul-e)
+```
 
 Az elnevezés második szava jó szerencsétlen, mert a valószínűségszámítás egy halom olyan dolgot vizsgál, ami nem kísérlet a szó szokásos tudományos értelmében, azaz nem mi hajtjuk végre, de még csak az sem világos első látásra, hogy milyen értelemben ismételhető meg akárhányszor. Az orvostudományban vizsgálhatjuk például azt, hogy egy beteg meggyógyul-e. Hogy ez nagyon sokszor tényleg olyan, ami nem mondható meg biztosan, az vitathatatlan, na de hogy kísérlet? És akárhányszor megfigyelhető?! A pszichológiából, szociológiából stb. nem csak hogy milliónyi hasonló példát lehetne hozni, de ezeken a területeken pont hogy *nem* tipikus, hogy kísérletet végzünk. Fogjuk fel ezt hagyományos elnevezésként, ami az olyan hétköznapi példákból jött mint a kockadobás, amit tényleg napestig ismételgethetünk azonos körülmények között, kísérletként.
 
-<div class="handout">
-- Az is döntés kérdése, hogy mi véletlen, aminek "nem mondható meg biztosan" a kimenetet (pl. a kockadobás az? elvileg nem!) -- közelítés kérdése
-</div>
+```{block, type="handout"}
+Az is döntés kérdése, hogy mi véletlen, aminek ,,nem mondható meg biztosan'' a kimenetet (pl. a kockadobás az? elvileg nem!) -- közelítés kérdése
+```
 
 A "véletlen" szó viszont látszólag teljesen rendben van, ez tényleg jól megfelel nyelvileg annak, hogy "a kimenete nem mondható meg biztosan". Valójában ezen is érdemes kicsit elmorfondírozni. A Mi a véletlen? kérdés nagy részét átutalom a filozófia tárgykörébe, itt most egy aspektust szeretnék érinteni: azt, hogy a válasz nagyon gyakran igazából azon is múlik, hogy mi milyen közelítési pontosságot választunk, mit hanyagolunk el és mit nem. Vegyük a kockadobást! Az előző bekezdésben is szerepelt, mint valami "nyilvánvalóan" jó példa a véletlenre, de ha jobban meggondoljuk, akkor *igazából* a kockadobás kimenete -- az előbbi értelemben -- *nem* véletlen, mert nagyon is megmondható: ha ismerjük az eldobás pillanatában a kocka sebességét, gyorsulását, a légellenálással kapcsolatos adatait, az ütközési tényezőjét az asztallal találozáskor stb. akkor *elvileg* tökéletesen pontosan, *determinisztikusan* megmondható, hogy hányast fog mutatni, ehhez csak a fizikát kell tudni. Ha valaki azt gondolná, hogy ez csak ilyen elvi jelentőségű, akadémikus akadékoskodás, akkor gondoljon arra, hogy pár évvel ezelőtt a laikus sajtóban is hír volt az az okostelefonra fejlesztett alkalmazás, amivel ha az ember levideóz egy rulettkereket, akkor még pörgés *közben* meg tudja jó eséllyel mondani, hogy hová fog érkezni a golyó! (Ezen képesség szerény kezdőtőke birtokában nagyon is gyakorlati jelentőségű és kevéssé akadémikus előnyökre átváltható.) Pedig hát a rulettkerék pörgetésénél ideáltipikusabb példát aligha lehet találni arra, hogy mi "véletlen"... És tessék -- ugyanazon múlt a dolog, hogy a kameraképen megkeressük a golyót, meghatározzuk a gyorsulását, ezt bedobjuk a mozgására vonatkozó fizikai egyenletekbe stb., és így egy sztochasztikus dolgot determinisztikussá teszünk.
 
@@ -50,57 +50,65 @@ A "véletlen" szó viszont látszólag teljesen rendben van, ez tényleg jól me
 
 ## A valószínűségszámítás alapfogalmai
 
-<div class="handout">
-- A véletlen kísérlet lehetséges kimeneteleit **kimenetelnek** nevezzük (pl. kockadobásnál az, hogy ⚁)
-- Az összes lehetséges kimenetet egybefogjuk egy halmazba (kockadobásnál $\left\{⚀,⚁,⚂,⚃,⚄,⚅\right\}$), ennek neve **eseménytér**
-</div>
+```{block, type="handout"}
+A véletlen kísérlet lehetséges kimeneteleit **kimenetelnek** nevezzük (pl. kockadobásnál az, hogy ⚁)
+
+Az összes lehetséges kimenetet egybefogjuk egy halmazba (kockadobásnál $\left\{⚀,⚁,⚂,⚃,⚄,⚅\right\}$), ennek neve **eseménytér**
+```
 
 Most hogy tisztáztuk a véletlen kísérlet tartalmát, menjünk tovább az alapfogalmak bevezetésében. Mindenekelőtt szükségünk van a véletlen kísérlet lehetséges kimeneteleire, ezeket, roppant kreatív módon, hivatalosan **kimenetelnek** nevezzük^[Némelyik magyar irodalom a kimenetel helyett az elemi esemény terminológiát használja. Ez azonban nem egységes, az angol irodalom egységesen *nem* ezt hívja elemi eseménynek, ráadásul a kimenetel szó némileg logikusabb is, úgyhogy a továbbiakban ezt fogom használni.], kockadobásnál ilyen a ⚀ vagy a ⚂ (szándékosan nem számot írtam!). A kimenetelekből mindig *pontosan* egy következik be: nem lehet az, hogy kettő (nem dobhatok egyszerre ⚀-et és ⚂-at), és nem lehet az sem, hogy egy sem (nem lehet, hogy amit dobok az nem ⚀, nem ⚁, nem ⚂, nem ⚃, nem ⚄ és nem ⚅). A lehetséges kimenetelek összességét, tehát mindent ami kijöhet a kísérletből, **eseménytérnek** szokás nevezni. Valamilyen dolgokat akarok összefogni... erre a jó matematikai objektum a halmaz lesz! Tehát az eseménytér egy halmaz, ami minden lehetséges kimenetelt tartalmaz. A kockadobásnál: $\left\{⚀,⚁,⚂,⚃,⚄,⚅\right\}$. 
 
-<div class="handout">
-- Az eseménytér lehet véges (kockadobás) vagy végtelen, ez utóbbi esetben lehet megszámlálhatóan végtelen (hányszor járt egy véletlenszerűen választott magyar lakos külföldön) vagy nem megszámlálhatóan végtelen (mennyi a testtömege)
-- A véges vagy legfeljebb megszámlálhatóan végtelen eseménytereket együtt **diszkrét** eseménytérnek, a nem megszámlálhatóan végtelent **folytonos** eseménytérnek nevezzük
-</div>
+```{block, type="handout"}
+Az eseménytér lehet véges (kockadobás) vagy végtelen, ez utóbbi esetben lehet megszámlálhatóan végtelen (hányszor járt egy véletlenszerűen választott magyar lakos külföldön) vagy nem megszámlálhatóan végtelen (mennyi a testtömege)
 
-<div class="framebreak"></div>
+A véges vagy legfeljebb megszámlálhatóan végtelen eseménytereket együtt **diszkrét** eseménytérnek, a nem megszámlálhatóan végtelent **folytonos** eseménytérnek nevezzük
+```
 
 Ez egy meglehetősen egyszerű helyzet, hiszen az eseménytér véges sok kimenetelből áll. Bonyolultabb a szituáció akkor, ha mondjuk azt vizsgáljuk, hogy egy véletlenszerűen kiválasztott magyar lakos hányszor járt külföldön életében. Ez lehet 0, 1, 2, 3, 4,... de hol a vége? A válasz az, hogy *sehol*! Semmilyen számra nem mondhatjuk azt, hogy na, legfeljebb ennyiszer lehetett külföldön járni...! (Az rossz érvelés, hogy nézzük meg, hogy mennyi az eddigi magyar rekorder. Mondjuk azt találjuk, hogy 123-szor járt külföldön... és? Akkor mondhatjuk, hogy legfeljebb 123-szor lehet külföldön járni? Nyilván nem, a világon semmi akadálya nincs, hogy valaki 124-szer járjon. De akkor 124 a maximum? Nem, miért ne lehetne utána még egyet utazni.) Összességében tehát világos, hogy az *nem korlátos*, hogy valaki hányszor járhatott külföldön, így az eseménytér a $\left\{\text{,,0-szor járt''},\text{,,1-szer járt''}, \text{,,2-szer járt''},\dots{}\right\}$ halmaz. Ez tehát már végtelen halmaz! De a matematikusok úgy mondják: megszámlálhatóan végtelen, ami azt jelenti, hogy végtelen ugyan, de az elemeit fel lehet sorolni egymás után (hát persze, az előbb ezt meg is tettük). Még durvább a helyzet akkor, ha mondjuk azt kérdezzük, hogy mekkora egy véletlenszerűen kiválasztott ember testtömege. Lehet mondjuk 70 kg, de lehet 70,5 is. Vagy 70,48. Vagy 70,477. Vagy 70,4779. Azaz ez is végtelen sok értéket vehet fel! (Valaki azt mondhatja, hogy de hát a mérlegen csak az egész kilogrammokat lehet leolvasni. Persze, így tényleg véges sok érték lehetséges csak, de vegyünk jobb mérleget, amin tizedek is vannak. Még jobbat, amin századok is, és így tovább. A lényeg, hogy *elvileg* a testtömeg bármilyen valós szám lehet, most függetlenítsük magunkat attól, hogy a mérőeszközünk ezt csak korlátozott pontossággal tudja lemérni, vegyük úgy, hogy a vizsgált jellemző az *igazi* testtömeg, mintha lenne korlátlan pontosságú mérlegünk.) Ez tehát végtelen sok lehetséges kimenet, de az előzőnél is jobban végtelen, abban az értelemben, hogy ezeknek az elemeit már fel sem lehet sorolni! (Azaz nem lehet megmondani, hogy egy adott értékre mi a rákövetkező. Mert egész számok körében világos, hogy 70 után 71 jön. De a valós számok között mi jön a 70 után? 70,1? Nem, mert a 70,01 közelebb van. Akkor 70,01? Nem, mert a 70,001 közelebb van. Akkor 70,001? És így tovább, szóval a valós számok "jobban végtelenen" vannak mint az egészek, hiszen fel sem lehet őket sorolni; ezt szokták nem megszámlálható végtelennek nevezni.) Az érdekes az, hogy az ember azt gondolná, hogy a három eset között a nagy különbség ott van, hogy az eseménytér véges vagy végtelen, az már részletkérdés, hogy mennyire -- megszámlálhatóan vagy nem megszámlálhatóan -- végtelen. Ez nem így van! A helyzet az, hogy a véges és a megszámlálhatóan végtelen eset kezelése nagyon hasonló, ami igazán eltér, az a megszámlálhatatlanul végtelen eseménytér. A véges, vagy legfeljebb megszámlálhatóan végtelen eseményteret **diszkrét** eseménytérnek, a nem megszámlálhatóan végtelen eseményteret **folytonos** eseménytérnek szokták nevezni.
 
-<div class="handout">
-- Valószínűségeket nem a kimenethez fogunk rendelni, mert szeretnénk bonyolultabb dolgokhoz (pl. "párosat dobtunk") is valószínűségeket rendelni
-- Kimenetekből egyet vagy többet bepakolunk egy halmazba (pl. $\left\{⚁,⚃,⚅\right\}$), ezt **eseménynek** hívjuk, és úgy definiáljuk, hogy bekövetkezik, ha olyan kimenetel következik be, ami benne van ebben a halmazban
-- (Lehet egyelemű halmaz is)
-- Biztos esemény: az egész eseménytér, lehetetlen esemény: üres halmaz (gondoljuk végig, teljesen logikus elnevezések)
-</div>
+```{block, type="handout"}
+Valószínűségeket nem a kimenethez fogunk rendelni, mert szeretnénk bonyolultabb dolgokhoz (pl. ,,párosat dobtunk'') is valószínűségeket rendelni
+
+Kimenetekből egyet vagy többet bepakolunk egy halmazba (pl. $\left\{⚁,⚃,⚅\right\}$), ezt **eseménynek** hívjuk, és úgy definiáljuk, hogy bekövetkezik, ha olyan kimenetel következik be, ami benne van ebben a halmazban
+
+(Lehet egyelemű halmaz is)
+
+Biztos esemény: az egész eseménytér, lehetetlen esemény: üres halmaz (gondoljuk végig, teljesen logikus elnevezések)
+```
 
 Most, hogy ezeken túl vagyunk, jöhetnek végre a valószínűségek! Ha már kimeneteleink vannak, akkor azt gondolhatnánk, hogy azokhoz szeretnénk valószínűséget rendelni, például megmondani, hogy mekkora valószínűséggel dobunk ⚀-et. Nem ezt fogjuk tenni! Szeretnénk ugyanis valószínűséget rendelni bonyolultabb dolgokhoz is, például ahhoz, hogy "páros számot dobunk". Ennek megragadásához ismét a halmazokhoz fordulunk: a kimenetelekből egyet vagy többet bepakolunk egy halmazba, mondjuk így: $\left\{⚁,⚃,⚅\right\}$ ,elnevezzük ezt **eseménynek** és azt mondjuk, hogy egy esemény akkor következik be, ha olyan kimenetel áll elő, ami az eseménynek -- mint halmaznak -- az eleme. Világos tehát, hogy az előbbi esemény tényleg azt jelenti, hogy "páros számot dobtunk". Hasonlóképp definiálhatunk tetszőleges további eseményt. Például a $\left\{⚀,⚁,⚂,⚃\right\}$ esemény akkor következik be, ha ⚀-et dobunk, ⚁-t dobunk, ⚂-t dobunk vagy ⚃-et dobunk, hiszen egy esemény akkor következik be, ha olyan kimenetel jön ki, ami benne, mint halmazban benne van -- magyarul elmondva ez lesz az, hogy "4-nél nem nagyobb számot dobtunk". Az eseményeket általában az $A$, $B$, $C$, ... betűkkel jelöljük, például $A=\left\{⚁,⚃,⚅\right\}$.(De akkor azt nem is tudjuk megmondani, hogy mekkora valószínűséggel dobunk ⚀-et?! Dehogynem! Vegyük azt az -- *egyelemű!* -- halmazt, hogy $\left\{⚀\right\}$, és meg is vagyunk! A világon semmi nem tiltja, hogy egy eseménybe csak egyetlen kimenetelt pakoljunk be. Világos tehát, hogy ez a megközelítés csak általánosítja, kiterjeszti azt, mintha a kimentelekhez rendelnénk valószínűségeket.) Természetesen az is egy esemény, ami az összes kimenetelt tartalmazza (vagyis az esemény maga az eseménytér), ezt szokták **biztos eseménynek** nevezni, és az üres halmaz is egy esemény, ezt pedig **lehetetlen eseménynek** hívjuk. Az elnevezések teljesen logikusak: a biztos esemény biztosan bekövetkezik, hiszen mindenképp olyan kimenetel jön ki, ami benne van (lévén, hogy az összes benne van), a lehetetlen pedig soha, hiszen egyetlen kimenetel sincsen benne (mivel üres halmaz), azaz bármelyik kimenetel is következik be, soha nem lesz igaz, hogy a bekövetkező kimenetel benne van.
 
-<div class="handout">
-- Ilyen módon események "verbális" műveleteinek megfeleltethetünk halmaz-műveleteket
-- Pl. "4-nél nem nagyobb és páros számot dobunk" a "4-nél nem nagyobb számot dobunk" és a "páros számot dobunk" halmazainak a metszete: az "és"-nek megfelel a metszet
-- Hasonlóan a "vagy"-nak az unió
-</div>
+```{block, type="handout"}
+Ilyen módon események ,,verbális'' műveleteinek megfeleltethetünk halmaz-műveleteket
 
-<div class="framebreak"></div>
+Pl. ,,4-nél nem nagyobb és páros számot dobunk'' a ,,4-nél nem nagyobb számot dobunk'' és a ,,páros számot dobunk'' halmazainak a metszete: az ,,és''-nek megfelel a metszet
+
+Hasonlóan a ,,vagy''-nak az unió
+```
 
 Ennek a megközelítésnek van még egy előnye. Mondjuk, hogy szeretnénk arról az eseményről beszélni, hogy "4-nél nem nagyobb páros számot dobunk". Mi lesz ennek a halmaza? $\left\{⚁,⚃\right\}$. De vegyük észre, hogy ez nem más, mint a két előző halmaz metszete! Persze, mert annak, hogy "4-nél nem nagyobb *és* páros" azok a kimenetelek felelnek meg (azok kijövetele esetén következik be ez az esemény), amik *egyszerre* benne vannak abban, hogy "4-nél nem nagyobb" *és* abban, hogy "páros". Az események "és"-sel történő összekapcsolásának tehát megfelel az, hogy a halmazaik metszetét képezzük. Kitérő megjegyzés: ha két esemény metszete üres halmaz, az magyarul azt jelenti, hogy nem következhetnek be egyszerre (például "2-nél nem nagyobbat dobunk" és "4-nél nem kisebbet dobunk"); ezeket szokás kizáró eseménynek nevezni. Továbbmenve, annak az eseménynek, hogy "4-nél nem nagyobb vagy páros számot dobunk" a két halmaz uniója fog megfelelni, gondoljuk végig. Tehát a "vagy"-gyal történő összekapcsolásnál sem kell semmin gondolkoznunk, a "vagy" használatával kapott esemény(nek megfelelő halmaz) a két esemény, mint halmaz uniója lesz. Egy szó mint száz, azt látjuk, hogy az események ilyen "verbális" képzésének megfeleltethetünk szokásos halmazelméleti műveleteket.
 
-<div class="handout">
-- Miért nem rendelünk egész egyszerűen az összes lehetséges eseményhez valószínűséget?
-- Diszkrét eseménytérnél működne, de folytonosnál nem, ott csúnya dolgok történnének, ha ezt megpróbálnánk
-- Éppen ezért bevezetünk egy halmazt, mely azokat az eseményeket tartalmazza, amelyekhez egyáltalán szeretnénk valószínűséget rendelni, ezt hívjuk a **megfigyelhető események** halmazának
-</div>
+```{block, type="handout"}
+Miért nem rendelünk egész egyszerűen az összes lehetséges eseményhez valószínűséget?
+
+Diszkrét eseménytérnél működne, de folytonosnál nem, ott csúnya dolgok történnének, ha ezt megpróbálnánk
+
+Éppen ezért bevezetünk egy halmazt, mely azokat az eseményeket tartalmazza, amelyekhez egyáltalán szeretnénk valószínűséget rendelni, ezt hívjuk a **megfigyelhető események** halmazának
+```
 
 A végére még egy, de fontos megjegyzés. Valaki ezen a ponton esetleg azt mondhatja, hogy ne is gondolkozzunk azon, hogy mely eseményekhez rendelünk valószínűséget, egyszerűen vegyük a kimenetelekből képezett *összes lehetséges* halmazt (az üres halmazt, az összes kimenetelt mint egyelemű halmazt, az összes két kimenetelből álló eseményt, és így tovább, egészen az összes öt kimenetelből álló halmazig, és végül az egész eseménytérig). És akkor nem kell semmin gondolkoznunk, bárkinek bármilyen esemény jut is az eszébe, mindegyikhez lesz valószínűség. Ez nagyon csábítóan hangzik -- de sajnos nem fog működni. Hogy egész pontos legyek, diszkrét eseménytereknél működik, ott nyugodtan csinálhatjuk ezt, de folytonos esetekben nagyon csúnya dolgok történnének, ha megpróbálnánk szó szerint minden elképzelhető eseményhez valószínűséget rendelni. Éppen ezért be kell vezetnünk még egy fogalmat: azon események halmazát, amihez szeretnénk egyáltalán valószínűséget rendelni. Diszkrét esetben ez lehet az összes lehetséges esemény, de folytonos esetben szűkebb lesz nála. A dolgot nem tehetjük meg akárhogy, bizonyos követelményeket ki kell elégítenünk (csak példának okáért: ha két eseményhez rendelünk valószínűséget, akkor kötelező az uniójukhoz, tehát a "vagy"-gyal összekapcsoltjukhoz is rendelni valószínűséget, de igaz lesz az is, hogy az "és"-sel összekapcsoltjukhoz is kell legyen valószínűség rendelve), de ez most számunkra nem annyira fontos, a lényeg, hogy lesz egy halmazunk, amikben azok az események vannak, amikhez valószínűséget rendelünk. Hívjuk ezt a **megfigyelhető események** halmazának. (Ez inkább csak terminológia, ne akarjunk szükségképp a "megfigyelés" hétköznapi szavával kapcsolatba hozni. Fogjuk fel úgy, hogy ez egy elnevezés, egyszerűen így hívjuk azokat az eseményeket, amikhez valószínűséget fogunk rendelni.)
 
 ## A valószínűség bevezetése
 
-<div class="handout">
-- A **valószínűség** egy függvény, amely a megfigyelhető események mindegyikéhez hozzárendel egy valós számot (pl. $\left\{⚁,⚃,⚅\right\}\mapsto0,\!3$, ekkor $0,\!3$ valószínűséget rendeltünk ehhez az eseményhez, köznyelvileg ezt 30\%-nak mondjuk)
-- Jele $\mathbb{P}$, előbbi példánkban $\mathbb{P}\left(A\right)=\mathbb{P}\left(\left\{⚁,⚃,⚅\right\}\right)=0,\!3$
-- De nem akárhogy rendeljük hozzá: a valószínűségek nemnegatívak, a biztos esemény valószínűsége 1, és kizáró események uniójának a valószínűsége a valószínűségeik összege (ez utóbbi is jól érthető, ha a valószínűségre mint pacák területére gondolunk egy festővásznon)
-- Ezek axiómák (nem levezethetőek valamiből)
-</div>
+```{block, type="handout"}
+A **valószínűség** egy függvény, amely a megfigyelhető események mindegyikéhez hozzárendel egy valós számot (pl. $\left\{⚁,⚃,⚅\right\}\mapsto0,\!3$, ekkor $0,\!3$ valószínűséget rendeltünk ehhez az eseményhez, köznyelvileg ezt 30\%-nak mondjuk)
+
+Jele $\mathbb{P}$, előbbi példánkban $\mathbb{P}\left(A\right)=\mathbb{P}\left(\left\{⚁,⚃,⚅\right\}\right)=0,\!3$
+
+De nem akárhogy rendeljük hozzá: a valószínűségek nemnegatívak, a biztos esemény valószínűsége 1, és kizáró események uniójának a valószínűsége a valószínűségeik összege (ez utóbbi is jól érthető, ha a valószínűségre mint pacák területére gondolunk egy festővásznon)
+
+Ezek axiómák (nem levezethetőek valamiből)
+```
 
 És akkor végre: jöhet a valószínűség! A fentiek után a dologban nem lesz sok meglepetés: a **valószínűség** egy függvény, amely a megfigyelhető események mindegyikéhez hozzárendel egy valós számot. Például lehet egy ilyen hozzárendelés egyik eleme az, hogy $\left\{⚁,⚃,⚅\right\}\mapsto0,\!3$. Azaz a "párosat dobunk" eseményhez 0,3 valószínűséget rendelünk. (Hétköznapi szóhasználatban azt mondanánk: 30\%. A kettő ugyanaz, hiszen a százalékjel egyszerűen egy "szorozva 0,01-gyel"-t helyettesít. A valószínűségszámításban, matematikában egyszerűbb az élet, ha 0,3-at mondunk.) A valószínűség jele^[A könyvek egy része $\mathbf{P}$-t használ, tehát vastagon szedi a betűt. Kézírásban persze senki nem fog nekiállni satírozgatni minden betűnél, ezért gyakran "duplaszárú" betűt használnak, ami viszont nagyon menőn néz ki, ezért érdekes módon visszaszivárgott a gépi szedésbe; én is ezt fogom használni.] $\mathbb{P}$, tehát $A$ esemény valószínűséget $\mathbb{P}\left(A\right)$-val jelöljük, előbbi példánkban: $\mathbb{P}\left(A\right)=\mathbb{P}\left(\left\{⚁,⚃,⚅\right\}\right)=0,\!3$.
 
@@ -128,13 +136,17 @@ Semmi másra nincs tehát szükségünk, ebből a háromból axiómából létre
 cat("<div style='text-align: right;border-bottom: 1px solid black; width: 40%;margin-left:auto; margin-right:0'>A valószínű az, ami legtöbbször megtörténik.</div><div style='text-align: right; width:40%;margin-left:auto;margin-right:0'><i>Arisztotelész</i></div><br>")
 ```
 
-<div class="handout">
-- Valószínűség interpretácója: a fenti matematikai konstrukciónak mi köze van valós jelenségekhez
-- Legfontosabb interpretáció: elkezdünk kockát dobálgatni, és számoljuk a 2-es dobások relatív gyakoriságát
-- Azt fogjuk tapasztalni, hogy ez konvergál valamihez -- ez a valami legyen a valószínűség!
-- Ez a valószínűség **frekventista interpretációja**
-- Azért bőven van további interpretációknak is hely (pl. "30% a valószínűsége annak, hogy holnap esni fog az eső")
-</div>
+```{block, type="handout"}
+Valószínűség interpretácója: a fenti matematikai konstrukciónak mi köze van valós jelenségekhez
+
+Legfontosabb interpretáció: elkezdünk kockát dobálgatni, és számoljuk a 2-es dobások relatív gyakoriságát
+
+Azt fogjuk tapasztalni, hogy ez konvergál valamihez -- ez a valami legyen a valószínűség!
+
+Ez a valószínűség **frekventista interpretációja**
+
+Azért bőven van további interpretációknak is hely (pl. ..30% a valószínűsége annak, hogy holnap esni fog az eső'')
+```
 
 Nagyon fontos látni, hogy ez eddig egy tisztán matematikai konstrukció volt, nem kellett, hogy bármi köze legyen a valósághoz. Mondhatom azt, hogy egy szabályos kockával dobva $\left\{⚀\right\}\mapsto 0,\!9$, és tessék, nem történt semmi. Nem robbant fel a számítógép, fel lehet erre is építeni egy valószínűségi modellt (mindaddig természetesen, amíg a három axiómát betartjuk!).
 
@@ -144,9 +156,7 @@ Ezzel megint részint a filozófia tárgykörébe kerülünk, amit ismét alapve
 
 Ez a valószínűség **frekventista interpretációja**, aminek az alapgondolata borzasztóan egyszerűen elmondható. Fogjunk egy dobókockát és kezdjük el dobálgatni, feljegyezve, hogy hányszor dobtunk -- mondjuk -- 2-est. Nevezzük ezt a 2-es dobás gyakoriságának^[Innen jön ennek az interpretációnak az elnevezése. Csak sajnálni lehet, hogy a mai értelemben vett valószínűségszámítás még nem létezett a nyelvújítás korában, különben egész biztosan beszélhetnénk gyakoriságista értelmezésről. Úgyhogy folytassuk is kalandozásunkat a *viszonyatlan hihetőség*-számítás terén!] a kísérletsorozatunkban. Ez önmagában nem túl izgalmas: nyilván annál nagyobb lesz, minél hosszabb a kísérletsorozat, tehát minél többször dobtunk. Nézzük inkább azt, hogy az esetek mekkora *hányadában* dobtunk 2-est, tehát a gyakoriságot összuk el a dobások számával; ezt szokás relatív gyakoriságnak nevezni. Ha ezt ábrázoljuk grafikusan a dobások számának függvényében, akkor valami ilyesmit kapunk:
 
-<div class="framebreak"></div>
-
-```{r}
+```{r, echo = FALSE}
 N <- 10000
 lattice::xyplot( cumsum( sample( 0:1, N, replace = TRUE, prob = c( 5/6, 1/6 ) ) )/( 1:N )~( 1:N ),
                  type = "l", xlab = "Kísérletsorozat hossza (dobások száma)", ylab = "2-es dobások aránya",
@@ -165,28 +175,29 @@ Ahogy mondtam, a további interpretációkról nem akarok itt beszélni, de tal�
 
 ## A feltételes valószínűség
 
-<div class="handout">
-- Alapkérdés: hogy tudunk valószínűségbe valamilyen információt beépíteni
-- *Ha* tudjuk, hogy valami megtörtént, az hogyan módosítja a valószínűséget
-- Pl. *feltéve*, hogy legfeljebb 3-ast dobtunk, mennyi annak a valószínűsége, hogy párosat dobtunk?
-</div>
+```{block, type="handout"}
+Alapkérdés: hogy tudunk valószínűségbe valamilyen információt beépíteni
+
+*Ha* tudjuk, hogy valami megtörtént, az hogyan módosítja a valószínűséget
+
+Pl. *feltéve*, hogy legfeljebb 3-ast dobtunk, mennyi annak a valószínűsége, hogy párosat dobtunk?
+```
 
 Bár ez a fogalom csak valamilyen technikai apróságnak tűnhet, valójában egy borzasztó fontos koncepcióról van.
 
 Az alapkérdés az, hogy hogyan tudunk a valószínűségbe valamilyen *ismert információt beépíteni*. Más szóval, *ha* tudjuk, hogy valami megtörtént, akkor ezen információ fényében hogyan módosul események valószínűsége? Hiszen ha van valamilyen részleges információnk, az nagyon is befolyásolhatja a valószínűségét egy eseménynek, például megtudjuk azt, hogy a dobott szám 3 vagy annál kisebb, az módosítja annak a valószínűségét, hogy párosat dobtunk (ahhoz képest mintha nem tudnánk semmit). Az elnevezés nagyon szerencsés, hiszen ezt úgyis kiolvashatuk: *feltéve*, hogy legfeljebb 3-ast dobtunk, mennyi annak a valószínűsége, hogy párosat dobtunk? A matematikusok így szoktak beszélni, de ehhez mindig tartsuk észben, hogy a "feltéve" szót az előbbi értelmeben kell venni: ha ismerjük azt az információt, hogy legfeljebb 3-ast dobtunk, akkor ennek figyelembevételével, azaz ennek fennállása esetén mennyi a valószínűsége a páros dobásnak. Lényegében az a kérdés, hogy valamilyen állítást igaznak fogadva el (legfeljebb 3-ast dobtunk), erre szorítkozva, tehát leszűkítve a világunkat arra, ahol ez igaz, ezen *belül* mekkora a páros dobás valószínűsége.
 
-<div class="handout">
-- Arra szűkítve a világunkat, ahol a "legfeljebb 3-at dobtunk" megtörtént, ezen a világon belül mekkora a páros dobás valószínűsége?
-- Nagyon jól megérezhető a megoldás, ha a pacás analógiára gondolunk: az egyik pacán *belül* mekkora a másik paca területe?
-</div>
+```{block, type="handout"}
+Arra szűkítve a világunkat, ahol a ,,legfeljebb 3-at dobtunk'' megtörtént, ezen a világon belül mekkora a páros dobás valószínűsége?
+
+Nagyon jól megérezhető a megoldás, ha a pacás analógiára gondolunk: az egyik pacán *belül* mekkora a másik paca területe?
+```
 
 Ez a legutolsó megfogalmazás már az utat is mutatja a számításhoz. Nevezzük $A$-nak azt az eseményt, aminek a valószínűségére kíváncsiak vagyunk (az előző példában $A=\left\{⚁,⚃,⚅\right\}$), $B$-nek pedig a feltételét, tehát amiről tudjuk, hogy megvalósult ($B=\left\{⚀,⚁,⚂\right\}$). Mi a valószínűsége, hogy párosat dobtunk, feltéve, hogy legfeljebb 3-ast dobtunk? Abban a világban vagyunk, amiben igaz, hogy legfeljebb 3-ast dobtunk, és azt kérdezzük, hogy -- ezen belül! -- mekkora valószínűséggel dobtunk párosat.
 
 A kérdés megválaszolásához legjobb a festővászonra rajzolt pacás analógia, ahol az események a pacák, és a valószínűség pedig az, hogy a paca a vászon mekkora részét teszi ki. (Hiszen a pacának a területét mérjük, mégpedig úgy, hogy 1-nek a vászon területét neveztük.) Mit mondtunk most? Azt, hogy abban a világban vagyunk, amiben a $B$, a feltétel teljesült, erre szűkítjük magunkat. Ez tehát azt jelenti, hogy a festővászon helyett a világunkat a $B$ pacára szűkítjük le, és azon *belül* kérdezzük, hogy mekkora $A$ területe. Mivel ez utóbbi ($B$-n belül $A$ területe) nem más, mint $A$ és $B$ közös területe, így a kérdésünk egyszerűen annyi: $A$ és $B$ paca közös része $B$ mekkora részét -- *nem a vászon mekkora részét* -- teszi ki! Ami persze nem más, mint $A$ és $B$ közös területe osztva $B$ teljes területével:
 
-<div class="framebreak"></div>
-
-```{r, engine='tikz'}
+```{r, engine='tikz', echo=FALSE}
 \def\firstobj{plot[smooth, tension=.7] coordinates {(-3.5,0.5) (-3,2.5) (-1,3.5) (1.5,3) (4,3.5) (5,2.5) (5,0.5) (2.5,-2) (0,-0.5) (-3,-2) (-3.5,0.5)}}
 \def\secondobj{plot[smooth, tension=.7] coordinates {(1,0.5) (1.5,1) (3,1.5) (5.5,1) (8,2.5) (7,0.5) (8,-0.5) (5.5,-3) (3.5,-2.5) (1,-3.5) (1,0.5)}}
 \begin{tikzpicture}
@@ -203,12 +214,12 @@ A kérdés megválaszolásához legjobb a festővászonra rajzolt pacás analóg
 \end{tikzpicture}
 ```
 
-<div class="handout">
-- Így a **feltételes valószínűség** definíciója:
+```{block, type="handout"}
+Így a **feltételes valószínűség** definíciója:
 \[
 \mathbb{P}\left(A \mid B\right) = \frac{\mathbb{P}\left(A,B\right)}{\mathbb{P}\left(B\right)},
 \]
-</div>
+```
 
 Így tehát kapjuk a **feltételes valószínűség** definícióját, melyet úgy jelölünk, hogy $\mathbb{P}\left(A \mid B\right)$, ahol $A$ valószínűségét kérdezzük és $B$ a feltétel:
 \[
@@ -216,10 +227,11 @@ A kérdés megválaszolásához legjobb a festővászonra rajzolt pacás analóg
 \]
 ahol $A,B$-vel jelöltük azt, hogy "$A$ és $B$" (így a valószínűségüket a $\mathbb{P}\left(A,B\right)$ jelöli).
 
-<div class="handout">
-- Ismert információ ($B$) beépítésével "frissítettük" $A$ valószínűségét
-- $\mathbb{P}\left(A\right)$ a valószínűség a plusz-információ megismerése előtt, ezért neve **prior valószínűség**, $\mathbb{P}\left(A \mid B\right)$ a valószínűség a plusz-információ megismerése után, ezért neve **poszterior valószínűség**
-</div>
+```{block, type="handout"}
+Ismert információ ($B$) beépítésével ,,frissítettük'' $A$ valószínűségét
+
+$\mathbb{P}\left(A\right)$ a valószínűség a plusz-információ megismerése előtt, ezért neve **prior valószínűség**, $\mathbb{P}\left(A \mid B\right)$ a valószínűség a plusz-információ megismerése után, ezért neve **poszterior valószínűség**
+```
 
 Így lehet tehát egy ismert információ ($B$) beépítésével úgymond pontosítani egy valószínűséget! $\mathbb{P}\left(A\right)$ a valószínűség *mielőtt* megtudnánk bármilyen plusz-információt, szokták emiatt ezt **prior valószínűségnek** nevezni, $\mathbb{P}\left(A \mid B\right)$ pedig a valószínűség *miután* megtudtuk $B$-t, szokták ezt ezért **poszterior valószínűségnek** nevezni. A feltételes valószínűséggel tehát be tudjuk építeni az új ismeretet valamilyen valószínűségi kérdés megválaszolásába.
 
@@ -227,18 +239,21 @@ Az előbbi példánkat folytatva, szabályos kockánál annak a valószínűség
 
 (Észrevehető, hogy az osztásnak nincs értelme, ha $\mathbb{P}\left(B\right)=0$. De hát ez logikus is: egy 0 valószínűséggel bekövetkező eseménynél nincs sok teteje egy olyan kérdésnek, ami úgy kezdődik, hogy "feltéve, hogy ez bekövetkezik...".)
 
-<div class="handout">
-- Átrendezve: $\mathbb{P}\left(A,B\right)=\mathbb{P}\left(A \mid B\right)\cdot \mathbb{P}\left(B\right)$
-- "Együttes egyenlő feltételes, szorozva a feltétel valószínűségével"
-</div>
+```{block, type="handout"}
+Átrendezve: $\mathbb{P}\left(A,B\right)=\mathbb{P}\left(A \mid B\right)\cdot \mathbb{P}\left(B\right)$
+
+,,Együttes egyenlő feltételes, szorozva a feltétel valószínűségével''
+```
 
 A fenti definíciót átrendezhetjük a következő formába: $\mathbb{P}\left(A,B\right)=\mathbb{P}\left(A \mid B\right)\cdot \mathbb{P}\left(B\right)$. Ez kiolvasva azt mondja, hogy két esemény együttes bekövetkezésének a valószínűsége egyenlő a feltételes valószínűséggel szorozva a feltétel valószínűségével. Persze az együttes valószínűség szimmetrikus ($A,B$ ugyanaz, mint $B,A$, hiszen az nyilván mindegy, hogy azt mondom, hogy "$A$ és $B$ is bekövetkezett" vagy azt, hogy "$B$ és $A$ is bekövetkezett"), $\mathbb{P}\left(A,B\right)=\mathbb{P}\left(B,A\right)$, ezért nyugodtan írhatjuk ezt is: $\mathbb{P}\left(A,B\right)=\mathbb{P}\left(B \mid A\right)\cdot \mathbb{P}\left(A\right)$.
 
-<div class="handout">
-- Ha $\mathbb{P}\left(A \mid B\right)=\mathbb{P}\left(A\right)$: $B$ ismerete nem változtatja meg $A$ valószínűségét, ilyenkor azt mondjuk, hogy ezek **független** események
-- Szimmetrikus: ha ez fennáll, akkor $\mathbb{P}\left(B \mid A\right)=\mathbb{P}\left(B\right)$ is
-- És mindezek egyenértékűek azzal, hogy $\mathbb{P}\left(A,B\right)=\mathbb{P}\left(A\right)\cdot \mathbb{P}\left(B\right)$
-</div>
+```{block, type="handout"}
+Ha $\mathbb{P}\left(A \mid B\right)=\mathbb{P}\left(A\right)$: $B$ ismerete nem változtatja meg $A$ valószínűségét, ilyenkor azt mondjuk, hogy ezek **független** események
+
+Szimmetrikus: ha ez fennáll, akkor $\mathbb{P}\left(B \mid A\right)=\mathbb{P}\left(B\right)$ is
+
+És mindezek egyenértékűek azzal, hogy $\mathbb{P}\left(A,B\right)=\mathbb{P}\left(A\right)\cdot \mathbb{P}\left(B\right)$
+```
 
 Külön említést érdemel, ha két eseményre teljesül, hogy $\mathbb{P}\left(A \mid B\right)=\mathbb{P}\left(A\right)$. Ez magyarán azt jelenti, hogy $B$ ismerete *nem változtatta meg* $A$ valószínűségét: az új információ se nem csökkentette, se nem növelte $A$ fennállásának a valószínűségét. Ilyenkor szokták azt mondani, hogy $A$ és $B$ **független események**^[A valószínűségi értelemben vett függetlenségnek nem feltétlenül van köze a "függetlenség" hétköznapi értelméhez, mondjuk, hogy az egyik nem okozza a másikat: egyszerűen annyit jelent, hogy $A$ esemény $B$-n belüli területe $B$-hez viszonyítva ugyanannyi mint $A$ egész területe a festővászonhoz viszonyítva.]. A "páros dobás" és a "legfeljebb 3-as dobás" tehát *nem* független események: $1/2$ a valószínűsége annak, hogy párosat dobunk (önmagában, semmi mást nem tudva), de $1/3$, ha tudjuk, hogy legfeljebb 3-ast dobtunk, tehát erre feltételezünk. A páros dobás valószínűsége tehát megváltozott, a poszterior valószínűsége nem ugyanaz mint a prior valószínűsége. Azonban "párosat dobunk" és a "legfeljebb 2-t dobunk" már függetlenek: a legfeljebb 2-t dobtunk ismeretében ugyanúgy $1/2$ a páros dobás valószínűsége, mint ezen ismeret nélkül.
 
@@ -307,7 +322,7 @@ A valószínűségi változó használatával tehát a kimeneteket leképezzük 
 (Egyedül arra kell figyelnünk, hogy a valós számok közül azokhoz akarjunk valószínűséget rendelni, de azokhoz mindegyikhez, amivel tényleg jól tudunk bánni -- mert nem minden számhalmaz ilyen. Ez annyi megkötést jelent, hogy a jól kezelhető halmazokba képeződő kimenetek legyenek megfigyelhető események, hiszen emlékezzünk vissza, a megfigyelhető események halmaza épp az, amihez valószínűséget rendelünk.)
 
 Annak a valószínűségét, hogy a valószínűségi változó egy adott számnál kisebb, tehát $X<x$ valószínűségét (vigyázzunk a kis- és nagybetűkre! bal oldalon $X$, tehát a valószínűségi változó van, jobb oldalon $x$, ami egy általunk megadott tetszőleges valós szám) a valószínűségi változó **eloszlásfüggvényének** szokták nevezni. Ez csakugyan $x$ függvénye, hiszen minden $x$-hez megad egy valószínűséget. Például szabályos kockadobásnál így néz kis:
-```{r}
+```{r, echo = FALSE}
 lattice::xyplot( (1:6)/6 ~ 1:6, xlim = c( -1, 8 ), ylim = c( -0.1, 1.1 ), scales = list( x = list( at = 0:7 ) ),
                  xlab = "x", ylab = "P(X<x)",
                  panel = function( x, y, ... ) {
@@ -322,7 +337,7 @@ lattice::xyplot( (1:6)/6 ~ 1:6, xlim = c( -1, 8 ), ylim = c( -0.1, 1.1 ), scales
 Eloszlásfüggvénye minden valószínűségi változónak, diszkrétnek és folytonosnak is van.
 
 Diszkrét valószínűségi változónál azokból az számokból is csak diszkrét sok van, amihez a valószínűségi változó nem nulla valószínűséget rendel, így általában érthetőbb képet ad, ha egyszerűen ezeket ábrázoljuk:
-```{r}
+```{r, echo = FALSE}
 lattice::xyplot( rep( 1/6, 6 ) ~ 1:6, xlim = c( -1, 8 ), ylim = c( -0.1, 1.1 ), abline = list( h = 0, col = "gray" ),
                  scales = list( x = list( at = 0:7 ) ), xlab = "x", ylab = "P(X=x)",
                  panel = function( x, y, ... ) {
@@ -336,12 +351,12 @@ Ezt szokás a változó **valószínűségi súlyfüggvényének** nevezni, de s
 Folytonos változó esetén zűrősebb a helyzet: be lehet látni, hogy egy folytonos valószínűségi változó minden konkrét értéket 0 valószínűséggel vesz fel! (Ha valakinek ezt nem venné be a gyomra -- miért ne lehetne valakinek a testtömege pont 70 kg? -- az gondoljon arra, hogy a folytonos eset az olyan, mintha végtelen pontosággal mérnénk. Igen, valakinek lehet pont 70 kg a testtömege -- egy kilogramm pontossággal mérő mérlegelen. De ha lecseréljük egy jobb, tized kilogramm pontosságú mérlegre, akkor kiderül, hogy a 70 kg-nak mértek igazából 69,7 vagy épp 70,3 kg-osak. Persze lesz aki még így is 70, azaz 70,0, de ekkor vessünk be egy század kilogramm pontosságú mérleget. Ekkor megint kiderül egy sor emberről, hogy igazából nem 70,00 volt a tömegük. Aki még így is 70,00 marad, azokat lemérjük egy ezred kilogramm pontosságú mérlegen és így tovább. Talán így már jobban elhihető, hogy nulla valószínűségű esemény, hogy valaki 70,0000000... kg súlyú legyen, ha a pontossággal a végtelenbe tartunk.) Persze ez nagyon furcsa lehet, hiszen ha minden értéket nulla valószínűséggel vesz fel, akkor meg hogyan lehet, hogy valamilyen értéket mégis 1 valószínűséggel vesz fel...? De a végtelen ilyen furcsa dolgokat produkál: véges sok nulla összege nulla, sőt, végtelen soké is, ha az csak megszámlálhatóan végtelen -- de nem megszámlálhatóan végtelen nulla összege lehet 1!
 
 Folytonos valószínűségi változó eloszlásfüggvénye (ne feledjük, az létezik folytonos változóra is!) nézhet ki például így:
-```{r}
+```{r, echo = FALSE}
 lattice::xyplot( pnorm( seq( 10, 130, 0.01 ), 70, 15 )~seq( 10, 130, 0.01 ), type = "l", xlab = "x", ylab = "P(X<x)" )
 ```
 
 Folytonos valószínűségi változónál annak tehát nincs értelme, hogy milyen valószínűséggel vesz fel a változó *egy adott* konkrét értéket (mert az minden értékre nulla), de szerencsére annak van értelme, hogy mivel arányos annak a valószínűsége, hogy egy adott érték *kis környezetébe* esik a felvett érték. Ez egyszerű műveletekkel meghatározható az eloszlásfüggvényből; az előbbi esetben így néz ki:
-```{r}
+```{r, echo = FALSE}
 lattice::xyplot( dnorm( seq( 10, 130, 0.01 ), 70, 15 )~seq( 10, 130, 0.01 ), type = "l", xlab = "x", ylab = "" )
 ```
 

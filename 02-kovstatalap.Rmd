@@ -14,7 +14,7 @@ Mit tudunk tehát mondani a 10 dobásból kapott 7 fej láttán?
 - Más $p$ választásnál azonban más lesz annak a valószínűsége, hogy ha annyi az igazi $p$, akkor mekkora valószínűséggel jön ki 10-ből 7 fej. Például ugyenilyen módon számolva, $p=0,\!02$-nél ez $0,\!000000000144567$, $p=0,\!1$-nél $0,\!000008748$, $p=0,\!5$-nél $0,\!1172$ (egyre nő), $p=0,\!9$-nél $0,\!05740$, $p=0,\!99$-nél $0,\!0001118$ (megint csökken).
 
 Lendületbe jöttünk! Akkor már na aprózzuk el, hogy néhány $p$-nél számolgatjuk... számoljuk ki nagyon sűrűn 0-tól 1-ig és ábrázoljuk, hogy mit kapunk! Íme:
-```{r}
+```{r, echo=FALSE}
 lattice::xyplot( dbinom( 7, 10, seq( 0, 1, 0.001 ) )~seq( 0, 1, 0.001 ), type = "l",
                  scales = list( x = list( at = seq( 0, 1, 0.1 ) ), y = list( at = seq( 0, 0.25, 0.05 ) ) ),
                  xlab = "Ha ennyi igazából a p...", ylab = "...akkor ekkora valószínűséggel\ndobunk 10-ből 7-szer fejet",
@@ -39,7 +39,7 @@ cat("<div style='text-align: right;border-bottom: 1px solid black; width: 40%;ma
 
 A becslést most megkaptuk egy konkrét mintára. De mi van akkor, ha más a minta? Ha nem 7-szer dobunk fejet, akkor mi lesz a maximum likelihood becslés? Játszunk el egy kicsit a dologgal (azt is beállíthatjuk, hogy hányszor dobtunk):
 
-```{r, screenshot.opts = list(delay = 5)}
+```{r, screenshot.opts = list(delay = 5), echo=FALSE}
 knitr::include_app( "https://research.physcon.uni-obuda.hu/Likelihood/", height = "600px" )
 ```
 
@@ -69,7 +69,7 @@ Szerencsére épp az ott megtanultak miatt nem esünk pánikba, hiszen tudjuk mi
 A számláló első tagja nem probléma: ez épp a likelihood! A nevező szintén nem probléma, a Bayes-tételnél látott trükkel itt is elintézhetjük, ha egyébként a számlálót ismerjük. De mi a helyzet a $\mathbb{P}\left(\text{ismeretlen paraméter}\right)$-rel...?
 
 Próbáljuk megérteni, hogy ez mit jelent. Mi a valószínűsége annak, hogy a paraméter adott értékű, *úgy hogy a mintát nem is ismerjük*. Mit gondolunk arról, hogy milyen a fej-dobási valószínűség, még mielőtt egyetlen egyszer is feldobtuk volna az érmét? Valaki esetleg azt mondhatja: semmit, hát épp ezért kezdjük dobálni! Ez egy jogos ellenvetés, de egyelőre rakjuk félre, vagy mondjuk azt, hogy a "semmit nem gondolunk", az ezt jelenti^[Van más értelmezése is annak, hogy mit jelent a "nem tudunk semmit", de ez félig (nem teljesen!) a filozófia tárgyköre.]:
-```{r}
+```{r, echo=FALSE}
 lattice::xyplot( c( 0, 0, NA, 1, 1, NA, 0, 0 )~c( -1, 0, NA, 0, 1, NA, 1, 2 ), type = "l",
                  xlab = "p", ylab = "", aspect = "iso" )
 ```
@@ -77,7 +77,7 @@ lattice::xyplot( c( 0, 0, NA, 1, 1, NA, 0, 0 )~c( -1, 0, NA, 0, 1, NA, 1, 2 ), t
 Tehát: 0-nál kisebb és 1-nél nagyobb nem lehet a fej-dobási valószínűség, azon belül pedig minden érték környékére ugyanakkora valószínűséggel esik^[Ezt szokták *egyenletes eloszlásnak* hívni: bármely 0 és 1 közti intervallumba akkora valószínűséggel esik, mintha az intervallum hossza. Ez tényleg azt jelenti, hogy bármely pont környékére ugyanakkora valószínűséggel esik.].
 
 Ha azonban jobban megnézzük, akkor most egy nagyon erőteljes eszközt kaptunk a kezükbe. A Bayes-tétel ugyanis lehetővé teszi, hogy *felhasználjuk* ha *van* valamilyen előzetes ismeretünk, elképzelésünk a paraméter eloszlásáról! Például az érmét egy megbízható barátunktól kaptuk, és azt gondoljuk, hogy -- ha nem is biztosan -- de valószínűleg nem cinkelt, legalábbis nem nagyon. Ekkor a következő lehet a feltételezésünk a fej-dobás valószínűségéről, még mielőtt egyetlen egyszer is feldobtuk volna:
-```{r}
+```{r, echo=FALSE}
 lattice::xyplot( dbeta( seq( -1, 2, 0.01 ), 2, 2 )~seq( -1, 2, 0.01 ), type = "l", xlab = "p", ylab = "", aspect = "iso" )
 ```
 
@@ -86,13 +86,13 @@ Ezeket az eloszlásokat szokták -- a korábban mondottak fényében nagyon is �
 Mit kapunk a bayes-i megközelítés eredményeként? Korábban azt írtam, hogy $\mathbb{P}\left(\text{ismeretlen paraméter}\mid\text{minta}\right)$, de ezt némileg idézőjelbe kell tenni: az ismeretlen paraméter egy folytonos dolog (bárhol lehet 0 és 1 között), tehát nem arról lesz szó, hogy mekkora valószínűséggel vesz fel egy értéket, hanem *eloszlása lesz*. Ami tulajdonképpen teljesen logikus: van egy eloszlása a kísérletezgetésünk előtt (a prior eloszlás), és egy másik a kísérletezés után. Hát persze: a Bayes-tétel, amint láttuk, beépít egy információt, és itt is ez történt: fogja a prior eloszlást, beleépíti az információt, ami kiderült a kísérletezésünkből, tehát a mintából, és kiköp egy "frissített" eloszlást, ami már a minta információját is tartalmazza. Ezt szokás -- szintén logikus szóval -- **poszterior eloszlásnak** nevezni.
 
 Például egyenletes prior esetén a következő lesz a poszterior (továbbra is mondjuk, hogy 7 fejet dobtunk 10 kísérletből):
-```{r}
+```{r, echo=FALSE}
 lattice::xyplot( dbeta( seq( 0, 1, 0.01 ), 1+7, 1+10-7 )~seq( 0, 1, 0.01 ), type = "l", xlab = "p", ylab = "",
                  panel = distr01panel )
 ```
 
 Viszont a "baráttól kaptunk a pénzérmét" prior esetén így fog kinézni a poszterior *pontosan ugyanazon minta* mellett:
-```{r}
+```{r, echo=FALSE}
 lattice::xyplot( dbeta( seq( 0, 1, 0.01 ), 2+7, 2+10-7 )~seq( 0, 1, 0.01 ), type = "l", xlab = "p", ylab = "",
                  panel = distr01panel )
 ```
@@ -101,7 +101,7 @@ A különbség nem nagy, de ha jobban megnézzük azért érzékelhető: az utó
 
 Nagyon tanulságos kipróbálni mindenféle prior és minta mellett, hogy hogyan alakul a poszterior, és hogy az hogyan viszonyul a -- prior információval nem törődő -- maximum likelihood becsléshez. A következő grafikonon a két eloszlás mellett látható a maximum likelihood becslés is, vastagabb függőleges vonallal megjelölve (azzal ne törődjünk, hogy az $\alpha$ meg a $\beta$ mit jelent, a lényeg, hogy ezek állításával a prior eloszlás alakját nagyon sokféle kinézetre beállíthatjuk):
 
-```{r, screenshot.opts = list(delay = 5)}
+```{r, screenshot.opts = list(delay = 5), echo=FALSE}
 knitr::include_app( "https://research.physcon.uni-obuda.hu/BayesBecsles/", height = "800px" )
 ```
 
@@ -139,7 +139,7 @@ Ahogy a korábbiakból is kiderült, a frekventista hozzáállás legfontosabb k
 
 Hogy ezt mélyebben megértsük, kapirgáljuk meg kicsit jobban a maximum likelihood becslőt a pénzfeldobásos példában. Megbeszéltük, hogy ekkor az ismeretlen $p$ paraméter, az érme ismeretlen fej-dobási valószínűsége a kísérletben kapott fej-dobási aránnyal becsülhető maximum likelihood módon. Azt is megjegyeztük, hogy ez persze csak tipp, hiszen biztosak soha nem lehetünk. Nézzük meg az utóbbit kicsit közelebbről! Mondjuk, hogy ismerjük a $p$-t (fordított logika!), és nézzük meg, hogy ekkor a mintabeli arány hogyan viselkedik! Például legyen a $p=0,\!6$, ekkor mekkora valószínűséggel dobunk 10-ből 0 fejet, 10-ből 1-et, 10-ből 2, ..., 10-ből 10-et. A számítást már láttuk is a fejezet elején, csak most nem különböző $p$-kre számítjuk ugyanazt a fej-dobás számot, hanem ugyanarra a $p$-re különböző fej-dobás számokat. Íme az eredmény:
 
-```{r}
+```{r, echo=FALSE}
 lattice::xyplot( dbinom( 0:10, 10, 0.6 )~0:10, scales = list( x = list( at = 0:10 ) ),
                  xlab = "Dobott fejek száma", ylab = "Valószínűség",
                  panel = function( x, y, ... ) {
@@ -163,7 +163,7 @@ A fenti grafikont, amelyen látjuk, hogy az ismeretlen paraméter adott érték�
 
 Érdemes kicsit kísérletezni, hogy ez hogyan függ a $p$-től és -- különösen -- a mintanagyságtól:
 
-```{r, screenshot.opts = list(delay = 5)}
+```{r, screenshot.opts = list(delay = 5), echo=FALSE}
 knitr::include_app( "https://research.physcon.uni-obuda.hu/Deduktiv/", height = "600px" )
 ```
 

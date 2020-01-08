@@ -13,16 +13,15 @@ bookdown::gitbook:
     edit: https://github.com/tamas-ferenci/FerenciTamas_ValszamEsStatAlapvonalai/edit/master/%s
     download: ["pdf", "epub"]
 bookdown::pdf_book:
-  pandoc_args: ["--lua-filter", "handoutconverter.lua"]
   includes:
-    in_header: preamble.tex
+    in_header: [ "preamble.tex", "preamble_pdf.tex" ]
   latex_engine: lualatex
-bookdown::epub_book:
-  pandoc_args: ["--lua-filter", "handoutconverter.lua"]
+bookdown::epub_book: default
 beamer_presentation:
   template: beamertemplate.tex
+  pandoc_args: ["--lua-filter", "handoutconverter.lua"]
   includes:
-    in_header: preamble.tex
+    in_header: ["preamble.tex", "preamble_handout.tex"]
   latex_engine: lualatex
   theme: "Madrid"
   colortheme: "orchid"

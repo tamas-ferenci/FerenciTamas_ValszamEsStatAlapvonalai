@@ -8,10 +8,7 @@ Közvetlenül is letölthető [PDF formátumban](https://github.com/tamas-ferenc
 
 ## Diasorok
 
-Az anyag vázlatát tartalmazó diasorok letölthetőek:
-
-- Vetíthető formátumban, ahol a pontok egymás után jönnek be: [FerenciTamas_ValszamEsStatAlapvonalai_slides.pdf](https://github.com/tamas-ferenci/FerenciTamas_ValszamEsStatAlapvonalai/raw/master/docs/FerenciTamas_ValszamEsStatAlapvonalai_slides.pdf).
-- Nyomtatható formátumban, ahol a diákon nincs animáció: [FerenciTamas_ValszamEsStatAlapvonalai_handout.pdf](https://github.com/tamas-ferenci/FerenciTamas_ValszamEsStatAlapvonalai/raw/master/docs/FerenciTamas_ValszamEsStatAlapvonalai_handout.pdf).
+Az anyag vázlatát tartalmazó diasor letölthetőek (nyomtatható formátumban, a diákon nincs animáció): [FerenciTamas_ValszamEsStatAlapvonalai_handout.pdf](https://github.com/tamas-ferenci/FerenciTamas_ValszamEsStatAlapvonalai/raw/master/docs/FerenciTamas_ValszamEsStatAlapvonalai_handout.pdf).
 
 ## Demonstrációk közvetlen elérhetősége
 

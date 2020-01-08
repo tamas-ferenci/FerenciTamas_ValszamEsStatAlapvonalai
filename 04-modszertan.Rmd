@@ -52,7 +52,7 @@ Innentől kezdve, ha találunk is különbséget a mentális megbetegedések el�
 
 A problémát tehát az jelenti, hogy a két változó kapcsolatát *megzavarja* egy harmadik változó, mely egyszerre hat az expozícióra *és* a végpontra. Ez a naiv elképzelés:
 
-```{r, engine='tikz'}
+```{r, engine='tikz', echo=FALSE}
 \usetikzlibrary{shapes,arrows}
 \begin{tikzpicture}
 	\node[draw,ellipse,align=center] (HRT) at (0, 0) {Légszennyezés};
@@ -63,7 +63,7 @@ A problémát tehát az jelenti, hogy a két változó kapcsolatát *megzavarja*
 
 És ez a valódi helyzet:
 
-```{r, engine='tikz'}
+```{r, engine='tikz', echo=FALSE}
 \usetikzlibrary{shapes,arrows}
 \begin{tikzpicture}
 	\node[draw,ellipse,align=center] (HRT) at (0, 0) {Légszennyezés};
@@ -97,7 +97,7 @@ Ez az ilyen jellegű adatok értékelésének egyik legnagyobb problémája (mel
 
 Ennek illusztrálására vegyünk egy másik példát a cikk elejének listájáról: a császármetszéssel születés megnöveli-e az 1-es típusú cukorbetegség kockázatát? A császármetszéssel születők között több az 1-es típusú cukorbeteg, de – most már tudjuk – ez nem sokat jelent, hiszen mi van, ha vannak egyéb eltérések is a csoportok között? Ez csakugyan így van: a következő ábra mutatja, immár egy valós orvosi példán, a legfontosabb confoundereket ebben az esetben. Még itt se mondhatjuk persze, hogy ez az összes, de ez már valóságközelibb.
 
-```{r, engine='tikz'}
+```{r, engine='tikz', echo=FALSE}
 \usetikzlibrary{shapes,arrows}
 \begin{tikzpicture}
 	\node[draw,ellipse,thick,align=center] (Csaszarmetszes) at (-2, 0) {Császármetszés};

@@ -1,6 +1,10 @@
 \let\oldframe\frame
 \renewcommand\frame[1][allowframebreaks]{\oldframe[#1]}
-\setbeamertemplate{frametitle continuation}{%
-    \ifnum\insertcontinuationcount>1
-    \insertcontinuationcount.
-    \fi}
+\makeatletter
+\defbeamertemplate*{frametitle continuation}{only if multiple}{%
+    \ifnum \numexpr \beamer@endpageofframe+1-\beamer@startpageofframe\relax > 1
+        \insertcontinuationcount.%
+    \fi
+}
+\makeatother
+\NewEnviron{handout}{\BODY}

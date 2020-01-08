@@ -19,7 +19,7 @@ cover-image: FerenciTamas_ValszamEsStatAlapvonalai_cover.png
 # Előszó {-}
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = FALSE, fig.align="center", out.width = "70%")
+knitr::opts_chunk$set(fig.align="center", out.width = "70%")
 distr01panel <- function( ... ) {
   lattice::panel.abline( v = seq( 0, 1, 0.1 ), col = lattice::trellis.par.get("reference.line")$col )
   lattice::panel.grid( h = -1, v = 0 )
@@ -43,29 +43,29 @@ cat("<div style='text-align: right;border-bottom: 1px solid black; width: 35%;ma
 cat("<div style='text-align: right;border-bottom: 1px solid black; width: 35%;margin-left:auto; margin-right:0'>Ez a visszavezetés a lényege a [...] megoldásnak, nem a képlet.</div><div style='text-align: right; width:35%;margin-left:auto;margin-right:0'><i>Péter Rózsa</i></div><br>")
 ```
 
-<div class="handout">
-- A valószínűségszámítást matematikai formalizmus nélkül fogjuk tárgyalni
-</div>
+```{block, type="handout"}
+A valószínűségszámítást matematikai formalizmus nélkül fogjuk tárgyalni
+```
 
 Ez a jegyzet egy kísérlet. Kísérlet arra, hogy a valószínűségszámítás és a statisztika alapjait elmagyarázza, de a nélkül, hogy ehhez matematikai formalizmust használna. Nem lesznek benne tételek, levezetések, bizonyítások, sőt, még a szimbolikus jelölések bevezetését is igyekeztem a lehető legszükségesebbre korlátozni.
 
-<div class="handout">
-- A formalizálás kell a mélyebb tárgyaláshoz, azonban sok hallgató (orvosok, szociológusok stb.) számára ezek a részek úgysem fontosak
-</div>
+```{block, type="handout"}
+A formalizálás kell a mélyebb tárgyaláshoz, azonban sok hallgató (orvosok, szociológusok stb.) számára ezek a részek úgysem fontosak
+```
 
 Mi motiválja ezt a kísérletet? A valószínűségszámítás és a statisztika szokásos egyetemi tárgyalása matematikailag formalizált. Hol mélyebb apparátust használ, hol világosabbat, de mindenesetre végig matematizált. Ami, félreértés ne essék, teljesen érthető, hiszen mind a valószínűségszámításnak, mind a statisztikának a korszerű felépítése csakugyan jól formalizált, és ez elengedhetetlenül szükséges is a bonyolultabb koncepciók bevezetésével és tárgyalásához.
 
-<div class="handout">
-- Viszont a matematikai formalizmus azt is megnehezíti, hogy az alapkérdéseket megértsék
-</div>
+```{block, type="handout"}
+Viszont a matematikai formalizmus azt is megnehezíti, hogy az alapkérdéseket megértsék
+```
 
 A tapasztalatom azonban az, hogy rengeteg olyan hallgató van, orvostanhallgatók, szociológusok, biológusok, akik abba a furcsa helyzetbe kerülnek, hogy egyfelől a matematikai formalizmusra sem szükségük nincsen, sem kézbentartani nem tudják, de másfelől borzasztó fontos lenne, hogy az alapgondolatokat jól megértsék. Úgy érzem, hogy a matematizált tárgyalás az esetükben egy rossz kompromisszumot köt: azért, hogy a bonyolultabb dolgok is elmondhatóak legyenek (mert ahhoz tényleg kell a matematikai formalizmus, nem kérdés!), az egyszerűbbeket is úgy mondja el, hogy nem értik meg azok, akiknek a bonyolultabbakra nincs szükségük. De miért ne mondjuk inkább ez az egyszerűbbeket formalizáltság nélkül? Igen, így a bonyolultabbakat nem lehet elmondani, de ha egyszer ezekre úgysem lesz szükségük (illetve az érdeklődők úgyis el tudják sajátítani)...? Nem lenne jobb kompromisszum feláldozni a bonyolultabb dolgokat cserében azért, hogy az egyszerűek jobban érthetőek legyenek? Hiszek ugyanis abban, hogy a valószínűségszámítás és a statisztika alapjait -- amik sok szakmában az igazán fontosak! -- igenis el lehet mondani matematikai formalizmus nélkül is érthetően, világosan.
 
 A cél elérése érdekében igyekszem sokkal nagyobb figyelmet szentelni annak, hogy az alapgondolatok jól követhetőek legyenek, több oldalról körüljárni őket, megmutatni az alkalmazásaikat, példát hozni, ahol lehet szimulációkat végezni, sőt, a jegyzet webes változatában interaktív vizualizációkat is mutatni.
 
-<div class="handout">
-- Minden visszajelzést örömmel veszek a [tamas.ferenci@medstat.hu](tamas.ferenci@medstat.hu) email-címen
-</div>
+```{block, type="handout"}
+Minden visszajelzést örömmel veszek a [tamas.ferenci@medstat.hu](tamas.ferenci@medstat.hu) email-címen
+```
 
 Az olvasó a kísérlet eredményét a jegyzet végére megítélheti. Én mindenesetre -- különösen azért, mert ez egy kísérlet -- minden visszajelzést, véleményt, kritikát a lehető legnagyobb örömmel veszek a [tamas.ferenci@medstat.hu](tamas.ferenci@medstat.hu) email-címen!
 
