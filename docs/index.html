@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="hu" xml:lang="hu">
+<html lang="hu" xml:lang="hu">
 <head>
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>A valószínűségszámítás és a statisztika alapvonalai</title>
   <meta name="description" content="Ez a jegyzet a valószínűségszámítás és a statisztika alapjait igyekszik bemutatni, képletek, levezetések, matematikai formalizmusok nélkül. Azok számára, akiknek a matematikai formalizmus nem kell, de az alapgondolatokat szeretnék jól érteni." />
-  <meta name="generator" content="bookdown 0.16 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
 
   <meta property="og:title" content="A valószínűségszámítás és a statisztika alapvonalai" />
   <meta property="og:type" content="book" />
@@ -21,7 +21,7 @@
   <meta name="twitter:description" content="Ez a jegyzet a valószínűségszámítás és a statisztika alapjait igyekszik bemutatni, képletek, levezetések, matematikai formalizmusok nélkül. Azok számára, akiknek a matematikai formalizmus nem kell, de az alapgondolatokat szeretnék jól érteni." />
   <meta name="twitter:image" content="https://tamas-ferenci.github.io/FerenciTamas_ValszamEsStatAlapvonalai/FerenciTamas_ValszamEsStatAlapvonalai_cover.png" />
 
-<meta name="author" content="Ferenci Tamás," />
+<meta name="author" content="Ferenci Tamás, " />
 
 
 
@@ -32,6 +32,7 @@
   
 
 <link rel="next" href="a-valószín-ségszámítás-röviden.html"/>
+<script src="libs/header-attrs-2.7/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -78,7 +79,8 @@
 
 <li class="divider"></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Előszó</a></li>
-<li class="chapter" data-level="1" data-path="a-valószín-ségszámítás-röviden.html"><a href="a-valószín-ségszámítás-röviden.html"><i class="fa fa-check"></i><b>1</b> A valószínűségszámítás röviden</a><ul>
+<li class="chapter" data-level="1" data-path="a-valószín-ségszámítás-röviden.html"><a href="a-valószín-ségszámítás-röviden.html"><i class="fa fa-check"></i><b>1</b> A valószínűségszámítás röviden</a>
+<ul>
 <li class="chapter" data-level="1.1" data-path="a-valószín-ségszámítás-röviden.html"><a href="a-valószín-ségszámítás-röviden.html#mi-az-hogy-véletlen"><i class="fa fa-check"></i><b>1.1</b> Mi az, hogy véletlen?</a></li>
 <li class="chapter" data-level="1.2" data-path="a-valószín-ségszámítás-röviden.html"><a href="a-valószín-ségszámítás-röviden.html#a-valószínűségszámítás-alapfogalmai"><i class="fa fa-check"></i><b>1.2</b> A valószínűségszámítás alapfogalmai</a></li>
 <li class="chapter" data-level="1.3" data-path="a-valószín-ségszámítás-röviden.html"><a href="a-valószín-ségszámítás-röviden.html#a-valószínűség-bevezetése"><i class="fa fa-check"></i><b>1.3</b> A valószínűség bevezetése</a></li>
@@ -87,17 +89,20 @@
 <li class="chapter" data-level="1.6" data-path="a-valószín-ségszámítás-röviden.html"><a href="a-valószín-ségszámítás-röviden.html#bayesvalszam"><i class="fa fa-check"></i><b>1.6</b> A Bayes-tétel</a></li>
 <li class="chapter" data-level="1.7" data-path="a-valószín-ségszámítás-röviden.html"><a href="a-valószín-ségszámítás-röviden.html#a-valószínűségi-változó"><i class="fa fa-check"></i><b>1.7</b> A valószínűségi változó</a></li>
 </ul></li>
-<li class="chapter" data-level="2" data-path="a-következtet-statisztika-alapjai.html"><a href="a-következtet-statisztika-alapjai.html"><i class="fa fa-check"></i><b>2</b> A következtető statisztika alapjai</a><ul>
+<li class="chapter" data-level="2" data-path="a-következtet-statisztika-alapjai.html"><a href="a-következtet-statisztika-alapjai.html"><i class="fa fa-check"></i><b>2</b> A következtető statisztika alapjai</a>
+<ul>
 <li class="chapter" data-level="2.1" data-path="a-következtet-statisztika-alapjai.html"><a href="a-következtet-statisztika-alapjai.html#egy-rávezető-gyakorlat"><i class="fa fa-check"></i><b>2.1</b> Egy rávezető gyakorlat</a></li>
 <li class="chapter" data-level="2.2" data-path="a-következtet-statisztika-alapjai.html"><a href="a-következtet-statisztika-alapjai.html#egy-becslőfüggvény-felé"><i class="fa fa-check"></i><b>2.2</b> Egy becslőfüggvény felé</a></li>
 <li class="chapter" data-level="2.3" data-path="a-következtet-statisztika-alapjai.html"><a href="a-következtet-statisztika-alapjai.html#a-bayes-i-probléma"><i class="fa fa-check"></i><b>2.3</b> A bayes-i probléma</a></li>
 <li class="chapter" data-level="2.4" data-path="a-következtet-statisztika-alapjai.html"><a href="a-következtet-statisztika-alapjai.html#a-frekventista-statisztika-építménye"><i class="fa fa-check"></i><b>2.4</b> A frekventista statisztika építménye</a></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="a-bizonytalanság-jellemzése.html"><a href="a-bizonytalanság-jellemzése.html"><i class="fa fa-check"></i><b>3</b> A bizonytalanság jellemzése</a><ul>
+<li class="chapter" data-level="3" data-path="a-bizonytalanság-jellemzése.html"><a href="a-bizonytalanság-jellemzése.html"><i class="fa fa-check"></i><b>3</b> A bizonytalanság jellemzése</a>
+<ul>
 <li class="chapter" data-level="3.1" data-path="a-bizonytalanság-jellemzése.html"><a href="a-bizonytalanság-jellemzése.html#intervallumbecslés"><i class="fa fa-check"></i><b>3.1</b> Intervallumbecslés</a></li>
 <li class="chapter" data-level="3.2" data-path="a-bizonytalanság-jellemzése.html"><a href="a-bizonytalanság-jellemzése.html#hipotézisvizsgálat"><i class="fa fa-check"></i><b>3.2</b> Hipotézisvizsgálat</a></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="egy-alapvet-kutatásmódszertani-kérdés.html"><a href="egy-alapvet-kutatásmódszertani-kérdés.html"><i class="fa fa-check"></i><b>4</b> Egy alapvető kutatásmódszertani kérdés</a><ul>
+<li class="chapter" data-level="4" data-path="egy-alapvet-kutatásmódszertani-kérdés.html"><a href="egy-alapvet-kutatásmódszertani-kérdés.html"><i class="fa fa-check"></i><b>4</b> Egy alapvető kutatásmódszertani kérdés</a>
+<ul>
 <li class="chapter" data-level="4.1" data-path="egy-alapvet-kutatásmódszertani-kérdés.html"><a href="egy-alapvet-kutatásmódszertani-kérdés.html#az-orvosi-megismerés-alapkérdései"><i class="fa fa-check"></i><b>4.1</b> Az orvosi megismerés alapkérdései</a></li>
 <li class="chapter" data-level="4.2" data-path="egy-alapvet-kutatásmódszertani-kérdés.html"><a href="egy-alapvet-kutatásmódszertani-kérdés.html#az-okozatiság-nyomában"><i class="fa fa-check"></i><b>4.2</b> Az okozatiság nyomában</a></li>
 <li class="chapter" data-level="4.3" data-path="egy-alapvet-kutatásmódszertani-kérdés.html"><a href="egy-alapvet-kutatásmódszertani-kérdés.html#a-confounding-problémája"><i class="fa fa-check"></i><b>4.3</b> A confounding problémája</a></li>
@@ -128,8 +133,8 @@
             <section class="normal" id="section-">
 <div id="header">
 <h1 class="title">A valószínűségszámítás és a statisztika alapvonalai</h1>
-<p class="author"><em>Ferenci Tamás,</em></p>
-<p class="date"><em>2020. január 8.</em></p>
+<p class="author"><em>Ferenci Tamás, </em></p>
+<p class="date"><em>2021. február 26.</em></p>
 </div>
 <div id="előszó" class="section level1 unnumbered">
 <h1>Előszó</h1>
@@ -138,7 +143,6 @@
 
 <div style='text-align: right;border-bottom: 1px solid black; width: 35%;margin-left:auto; margin-right:0'>Ez a visszavezetés a lényege a [...] megoldásnak, nem a képlet.</div><div style='text-align: right; width:35%;margin-left:auto;margin-right:0'><i>Péter Rózsa</i><br><p style='font-variant:small-caps'>Játék a végtelennel</p></div><br>
 -->
-
 <div style="text-align: right;border-bottom: 1px solid black; width: 35%;margin-left:auto; margin-right:0">
 Ez a visszavezetés a lényege a […] megoldásnak, nem a képlet.
 </div>
@@ -174,21 +178,21 @@ Minden visszajelzést örömmel veszek a <a href="tamas.ferenci@medstat.hu">tama
 <p>A jegyzet weboldala (oktatási segédanyagokkal, technikai információkkal) a <a href="https://github.com/tamas-ferenci/FerenciTamas_ValszamEsStatAlapvonalai">https://github.com/tamas-ferenci/FerenciTamas_ValszamEsStatAlapvonalai</a> címen érhető el.</p>
 
 </div>
-<!-- Default Statcounter code for Physcon Research
-http://research.physcon.uni-obuda.hu/ -->
+<!-- Default Statcounter code for Ferenci Tamás
+elektronikus jegy https://tamas-ferenci.github.io/ -->
 <script type="text/javascript">
-var sc_project=11601191; 
+var sc_project=12422840; 
 var sc_invisible=1; 
-var sc_security="5a06c22d"; 
+var sc_security="d32cce24"; 
 </script>
 <script type="text/javascript"
 src="https://www.statcounter.com/counter/counter.js"
 async></script>
-<noscript><div class="statcounter"><a title="ingyen
-webstatisztika" href="https://www.statcounter.hu/"
+<noscript><div class="statcounter"><a title="látogató
+számláló" href="https://www.statcounter.hu/"
 target="_blank"><img class="statcounter"
-src="https://c.statcounter.com/11601191/0/5a06c22d/1/"
-alt="ingyen webstatisztika"></a></div></noscript>
+src="https://c.statcounter.com/12422840/0/d32cce24/1/"
+alt="látogató számláló"></a></div></noscript>
 <!-- End of Statcounter Code -->
             </section>
 
